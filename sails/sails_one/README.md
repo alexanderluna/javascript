@@ -1,3 +1,3 @@
-# sails_one
+# Sails_one
 
-a [Sails](http://sailsjs.org) application
+My first Sails project on which I'm hacking around.
