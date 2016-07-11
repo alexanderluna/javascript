@@ -1,0 +1,23 @@
+{
+  "name": "electron_game",
+  "version": "1.0.0",
+  "description": "Simple Babylon js game",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mycroft1891/javascript_box.git"
+  },
+  "keywords": [
+    "electron",
+    "babylonjs"
+  ],
+  "author": "mycroft1891",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mycroft1891/javascript_box/issues"
+  },
+  "homepage": "https://github.com/Mycroft1891/javascript_box#readme"
+}
