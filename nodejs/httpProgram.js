@@ -2,7 +2,7 @@ var http = require('http')
 var bl = require('bl')
 
 var url = process.argv[2]
-
+// get data stream and output it
 http.get(url, function(response) {
     response.pipe(bl(function(err, data){
       var output = data.toString()
