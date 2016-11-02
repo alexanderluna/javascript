@@ -1,12 +1,13 @@
 $(function(){
-  var $h1 = $('h1');
+  var $temperature = $('#temperature');
+  var $humidity = $('#humidity');
   var $zip = $('input[name="zip"]');
 
-  $('form').on('submit'm function(event){
+  $('form').on('submit', function(event){
     event.preventDefault();
 
     var zipCode = $.trim($zip.val());
-    $h1.text('Loading...');
+    $temperature.text('Loading...');
 
     var request = $.ajax({
       url: '/' + zipCode,
@@ -14,12 +15,14 @@ $(function(){
     });
 
     request.done(function(data){
-      vat temperature = data.temperature;
-      $h1.html('It is ' + temperature + '&#176; in ' + zipCode + '.');
+      var temperature = data.temperature;
+      var humidity = data.humidity;
+      $temperature.html('It is ' + temperature + '&#176; in ' + zipCode + '.');
+      $humidity.html('and the humidity is of ' + humidity + '%');
     });
 
     request.fail(function(){
-      $h1.text('error!');
+      $temperature.text('error!');
     });
   });
 });

@@ -2,9 +2,12 @@ var express = require('express');
 var path    = require('path');
 var zipdb   = require('zippity-do-dah');
 var fCast   = require('forecastio');
+var logger  = require('morgan');
 
 var app     = express();
 var weather = new fCast('c42d88134d28015dbe99f737e8a4dc86');
+
+app.use(logger('short'));
 
 app.use(express.static(path.resolve(__dirname, 'public')));
 
@@ -15,7 +18,7 @@ app.get('/', function(req, res){
   res.render('index');
 });
 
-app.get(/^\/(\d{5})$/, function(req, res, netxt){
+app.get(/^\/(\d{5})$/, function(req, res, next){
   var zipcode = req.params[0];
   var location = zipdb.zipcode(zipcode);
   if(!location.zipcode){
@@ -34,7 +37,8 @@ app.get(/^\/(\d{5})$/, function(req, res, netxt){
 
     res.json({
       zipcode: zipcode,
-      temperature: data.currently.temperature
+      temperature: data.currently.temperature,
+      humidity: data.currently.humidity
     });
   });
 });
