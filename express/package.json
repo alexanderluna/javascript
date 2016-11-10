@@ -20,6 +20,7 @@
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.4",
+    "supertest": "^2.0.1",
     "zippity-do-dah": "0.0.2"
   }
 }
