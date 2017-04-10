@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="script/babylon2.4.js"></script>
+    <script scr="script/hand.minified-1.3.7.js">
+
+    </script>
+    <script src="script/app.js"></script>
+    <title>2 | BABYLON</title>
+
+    <style>
+      html, body {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      #renderCanvas {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="renderCanvas"></canvas>
+    <script type="text/javascript">
+      var canvas = document.getElementById('renderCanvas');
+      var engine = new BABYLON.Engine(canvas);
+      var scene = new BABYLON.Scene(engine);
+
+      var camera = new BABYLON.FreeCamera('freeCamera', new BABYLON.Vector3(10, 20, 30), scene);
+      // camera.position = new BABYLON.Vector3(10, 0, 10).addInPlace(new BABYLON.Vector3(0, 10, 0));
+      camera.setTarget(new BABYLON.Vector3.Zero());
+      camera.attachControl(canvas, false);
+
+      var light = new BABYLON.PointLight('pointLight', new BABYLON.Vector3.Zero(), scene);
+      light.position = new BABYLON.Vector3(20, 20, 20);
+      // diffuse: native color of the light
+      light.diffuse = new BABYLON.Color3(0, 1, 0);
+      // specular: light color reflected by surface
+      light.specular = new BABYLON.Color3(1, 0, 0);
+      // intensity: intensity of the light
+      light.intensity = 1.0;
+
+      var box = new BABYLON.Mesh.CreateBox('myBox', 5, scene);
+      box.position = new BABYLON.Vector3(0, 2.5, 0);
+      box.rotation = new BABYLON.Vector3(0, Math.PI / 4, 0);
+      box.scaling = new BABYLON.Vector3(2, 2, 2);
+
+      var sphere = new BABYLON.Mesh.CreateSphere('mySphere', 10, 10, scene);
+      var plane = new BABYLON.Mesh.CreatePlane('myPlane', 10, scene);
+
+      engine.runRenderLoop(function() {
+        scene.render();
+      });
+    </script>
+  </body>
+</html>

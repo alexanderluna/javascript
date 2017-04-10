@@ -26,6 +26,8 @@
     "zippity-do-dah": "0.0.2",
     "co-body": "^4.2.0",
     "bl": "^1.1.2",
-    "next": "^1.2.3"
+    "next": "^1.2.3",
+    "cat-picture": "^5.1.2",
+    "lightning-image-poly": "0.0.10"
   }
 }

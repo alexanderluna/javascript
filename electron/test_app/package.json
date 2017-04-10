@@ -1,6 +1,0 @@
-{
-  "name": "test_app",
-  "version": "0.1.0",
-  "description": "my first electron test app",
-  "main": "main.js"
-}
