@@ -3,5 +3,6 @@ function setup(){
 }
 
 function draw(){
-  background(Math.floor(mouseX/(600/255)));
+  col = map(mouseX, 0, 600, 0, 255);
+  background(col);
 }
