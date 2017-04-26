@@ -15,31 +15,20 @@ var brick_list = [];
 
 function setup(){
   createCanvas(720, 450);
-  frameRate(30);
   noStroke();
   ball = new Ball();
-  for (var i = 0; i < BRICK_ROW * BRICK_COL; i++)
-    if(random() < 0.5)
-      brick_list[i] = true;
-    else
-      brick_list[i] = false;
+  generateBrickGrid();
 }
 
 
 function draw() {
   background(40);
-
-  for (var row = 0; row < BRICK_ROW; row++)
-    for (var col = 0; col < BRICK_COL; col++)
-      if (brick_list[rowColIndex(col,row)]){
-        var b = new Brick(BRICK_W * col, BRICK_H * row);
-        b.drawBrick();
-      }// check true:false for each brick
-
+  renderBricks();
+  // render paddle
   rect(mouseX - PADDLE_W/2, height - 20, PADDLE_W, PADDLE_H);
 
   ball.renderBall();
-  ball.inBrickField(BRICK_W, BRICK_H, BRICK_COL, BRICK_ROW, brick_list)
+  ball.inBrickField(BRICK_W, BRICK_H, BRICK_COL, BRICK_ROW, brick_list);
 
   mouseActions();
 }
@@ -54,7 +43,21 @@ function mouseActions() {
   var mouseRow = Math.floor(mouseY/BRICK_H);
   var mouseBrickIndex = rowColIndex(mouseCol, mouseRow);
   text(mouseCol + "," + mouseRow + ":" + mouseBrickIndex, mouseX, mouseY);
+}
 
-  if (mouseBrickIndex >= 0 && mouseBrickIndex < BRICK_COL * BRICK_ROW)
-    brick_list[mouseBrickIndex] = false;
+function renderBricks() {
+  for (var row = 0; row < BRICK_ROW; row++)
+    for (var col = 0; col < BRICK_COL; col++)
+      if (brick_list[rowColIndex(col,row)]){
+        var b = new Brick(BRICK_W * col, BRICK_H * row);
+        b.drawBrick();
+      }
+}
+
+function generateBrickGrid() {
+  for (var i = 0; i < BRICK_ROW * BRICK_COL; i++)
+    if(random() < 0.5)
+      brick_list[i] = true;
+    else
+      brick_list[i] = false;
 }
