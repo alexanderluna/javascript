@@ -1,8 +1,8 @@
-function Brick(x,y){
+function Brick(x,y,w,h,gap){
   this.x = x;
   this.y = y;
-  this.w = 70;
-  this.h = 20;
+  this.w = w - gap;
+  this.h = h - gap;
 
   this.drawBrick = () => {
     fill(0,200,0);
