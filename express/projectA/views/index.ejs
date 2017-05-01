@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include shared/head.ejs %>
+  </head>
+  <body>
+    <% include shared/header.ejs %>
+    <div class="container">
+      <h1>Welcome our Website</h1>
+      <p>We love to feature speakers, please take a look at our list of speakers</p>
+      <% for(var i=0; i < data.length; i++) { %>
+        <p>
+          <a href="/speakers/<%= i %>"><%= data[i].shortname %></a>
+        </p>
+      <% } %>
+    </div>
+
+    <% include shared/footer.ejs %>
+  </body>
+</html>
