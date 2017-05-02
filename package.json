@@ -29,6 +29,7 @@
     "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.4",
     "reload": "^1.1.3",
+    "socket.io": "^1.7.3",
     "supertest": "^2.0.1",
     "zippity-do-dah": "0.0.2"
   }

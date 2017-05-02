@@ -6,8 +6,6 @@
   <body>
     <% include shared/header.ejs %>
 
-      <h1>Welcome our Website</h1>
-      <p>We love food and that's why we made a list of the bests, please take a look at our list.</p>
       <% restaurants.forEach((restaurant) => { %>
         <p>
           <a href="/restaurants/<%= restaurant.path %>"><%= restaurant.name %></a>

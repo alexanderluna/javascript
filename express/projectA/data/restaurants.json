@@ -1,0 +1,50 @@
+{
+  "restaurants": [{
+    "ranking": "1",
+    "path": "eleven-madison-park",
+    "chef": "Daniel Humm",
+    "bio": "",
+    "name": "Eleven Madison Park",
+    "website": "http://www.elevenmadisonpark.com/",
+    "description": "<p><strong>What makes it special: </strong>It’s the perfect partnership of outstanding hospitality and exquisite food in an iconic setting in New York City that makes Eleven Madison Park the No.1 in The World’s 50 Best Restaurants. Co-owners Will Guidara and Daniel Humm have put their lives into breaking down the walls between dining room and kitchen, making sure the customer experience is harmonious from start to finish.</p> <p><strong>About the chef:</strong> Swiss-born cook Daniel Humm started working in kitchens at the age of 14 and won his first Michelin star at 24. He became executive chef at Eleven Madison Park in 2006 when the restaurant was still owned by Danny Meyer’s Union Square Hospitality Group and in 2011 he and Guidara took over ownership. The pair now also oversee the food and beverage spaces at the NoMad hotels and have written several cookbooks together.</p> <p><strong>Typical dishes: </strong>Humm’s signature roasted duck has had many iterations, from the classic honey and lavender version to honey-glazed with turnips and huckleberries. Dishes on the seven-course tasting menu also include celery root cooked in a pig’s bladder, which Humm cites as a career-defining creation.</p> <p><strong>Reinvention plans:</strong> Eleven Madison Park is closing for renovation in June 2017 and will reopen in September with a new kitchen and refurbished dining room. Until June, diners can enjoy an 11-course retrospective tasting menu with classics from the last 11 years. Over the summer months, Humm and Guidara will operate a pop-up restaurant in The Hamptons.</p>",
+    "address": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d842.4202004981406!2d-73.98756626385126!3d40.741667777811145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5654dfd3ae8aa92c!2sEleven+Madison+Park!5e0!3m2!1sen!2spe!4v1493700105636\" width=\"100%\" height=\"20%\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
+    "images": ["https://s3-us-west-2.amazonaws.com/hyouka2/public/1_restaurant.jpg"]
+  },{
+    "ranking": "2",
+    "chef": "",
+    "bio": "",
+    "name": "",
+    "website": "",
+    "description": "",
+    "address": "",
+    "images": []
+
+  },{
+    "ranking": "3",
+    "chef": "",
+    "bio": "",
+    "name": "",
+    "website": "",
+    "description": "",
+    "address": "",
+    "images": []
+  }, {
+    "ranking": "4",
+    "chef": "",
+    "bio": "",
+    "name": "",
+    "website": "",
+    "description": "",
+    "address": "",
+    "images": []
+  }, {
+    "ranking": "5",
+    "chef": "",
+    "bio": "",
+    "name": "",
+    "website": "",
+    "description": "",
+    "address": "",
+    "images": []
+  }]
+}

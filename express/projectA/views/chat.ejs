@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include shared/head.ejs %>
+  </head>
+  <body>
+    <% include shared/header.ejs %>
+
+      <form name="chatForm" class="chat-form" method="post">
+        <input id="chat-username" class="form-control" type="text" placeholder="Fake name"><br>
+        <div class="input-group">
+          <input id="chat-message" class="form-control" type="text"placeholder="Your message ...">
+          <span class="input-group-btn">
+            <button id="chat-submit" class="btn btn-success" type="submit">Send</button>
+          </span>
+        </div><!-- /input-group -->
+      </form>
+      <hr>
+      <div class="panel panel-default">
+        <div class="panel-body chat-display">
+          <p class="text-muted chat-text">Welcome...add your message using the form above</p>
+        </div><!-- panel-body -->
+      </div>
+
+    <% include shared/footer.ejs %>
+  </body>
+</html>

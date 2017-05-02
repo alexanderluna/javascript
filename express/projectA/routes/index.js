@@ -6,7 +6,7 @@ router.get('/', (req,res) => {
   res.render('index', {
     siteTitle: 'Express',
     pageTitle: 'Home',
-    data: dataFile.speakers
+    restaurants: dataFile.restaurants
   });
 });
 

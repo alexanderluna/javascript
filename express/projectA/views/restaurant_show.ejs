@@ -4,15 +4,18 @@
     <% include shared/head.ejs %>
   </head>
   <body>
+
     <% include shared/header.ejs %>
 
-      <h1>Welcome our Website</h1>
-      <p>We love food and that's why we made a list of the bests, please take a look at our list.</p>
       <% restaurants.forEach((restaurant) => { %>
         <p>
-          <a href="/restaurants/<%= restaurant.path %>"><%= restaurant.name %></a>
+          <a href="/speakers/<%= restaurant.path %>"><%= restaurant.name %></a>
         </p>
-      <% }) %>
+        <img src="<%= restaurant.images[0] %>" width="100%">
+
+        <%- restaurant.description %>
+        <%- restaurant.address %>
+      <% }); %>
 
     <% include shared/footer.ejs %>
   </body>

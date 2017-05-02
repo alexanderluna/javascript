@@ -1,0 +1,19 @@
+.jumbotron {
+  margin: 0px;
+  padding: 12%;
+  background-image: url("../images/jumbotron.gif");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+p {
+  font-size: 1.2em;
+}
