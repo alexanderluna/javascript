@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include shared/head.ejs %>
+  </head>
+  <body>
+
+    <% include shared/header.ejs %>
+    <h2>Check the weather wherever you are: </h2>
+    <form id="weather-form" name="weatherForm" action="index.html" method="post">
+      <div class="input-group">
+        <input id="weather-city" class="form-control" type="text"placeholder="Your City ...">
+        <span class="input-group-btn">
+          <button id="weather-submit" class="btn btn-success" type="submit">Send</button>
+        </span>
+      </div><!-- /input-group -->
+
+      <hr>
+
+      <div class="panel panel-default">
+        <div class="panel-body weather-display">
+          <p class="text-muted weather-text">Your weather</p>
+        </div><!-- panel-body -->
+      </div>
+
+
+    <% include shared/footer.ejs %>
+  </body>
+</html>

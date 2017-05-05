@@ -15,7 +15,6 @@ router.get('/restaurants/:restaurant_name', (req,res) => {
   var restaurant_name = req.params.restaurant_name;
   var restaurantList = []
   dataFile.restaurants.forEach((restaurant) => {
-    console.log(restaurant);
     if (restaurant.path == restaurant_name) {
       restaurantList.push(restaurant);
     }
@@ -26,7 +25,6 @@ router.get('/restaurants/:restaurant_name', (req,res) => {
     pageTitle: restaurant_name,
     restaurants: restaurantList
   });
-
 });
 
 module.exports = router;
