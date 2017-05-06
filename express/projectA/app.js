@@ -4,6 +4,7 @@ var app       = express();
 var reload    = require('reload');
 var server    = require('http').Server(app);
 var io        = require('socket.io')(server);
+var dotenv    = require('dotenv').config();
 
 var dataFile  = require('./data/restaurants.json');
 
@@ -39,4 +40,5 @@ reload(server,app);
  body-parser
  http
  openweathermap
+ 
 */
