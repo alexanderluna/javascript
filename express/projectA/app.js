@@ -5,7 +5,9 @@ var reload    = require('reload');
 var server    = require('http').Server(app);
 var io        = require('socket.io')(server);
 var dotenv    = require('dotenv').config();
+var mongoose  = require('mongoose');
 
+mongoose.connect('mongodb://localhost:27017/test');
 var dataFile  = require('./data/restaurants.json');
 
 app.set('appData', dataFile);
@@ -17,6 +19,7 @@ app.use(require('./routes/index'));
 app.use(require('./routes/restaurants'));
 app.use(require('./routes/chat'));
 app.use(require('./routes/weather'));
+app.use(require('./routes/feedback'));
 app.use(express.static('public'));
 
 // socket connection
@@ -40,5 +43,5 @@ reload(server,app);
  body-parser
  http
  openweathermap
- 
+
 */

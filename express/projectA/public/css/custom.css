@@ -18,3 +18,25 @@
 p {
   font-size: 1.2em;
 }
+
+input {
+  margin-bottom: 5px;
+}
+
+textarea {
+  margin-bottom: 5px;
+}
+
+#feedback-content {
+  height: 100px;
+}
+
+.well {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.feedback-display {
+  padding-left: 5px;
+  padding-right: 5px;
+}

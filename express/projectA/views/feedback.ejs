@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include shared/head.ejs %>
+  </head>
+  <body>
+    <% include shared/header.ejs %>
+
+      <h1>Your Feedback</h1>
+      <p>We would like to hear from you. Let us know what you think about our site.</p>
+      <hr>
+      <div class="col-xs-12 col-md-5 divFeedback well">
+        <form id="feedback-form" name="feedbackForm" action="/feedback" method="post">
+          <input id="feedback-name" class="form-control" placeholder="Your name">
+          <textarea id="feedback-content" class="form-control" placeholder="Your feedback"></textarea>
+          <button id="weather-submit" class="btn btn-success pull-right" type="submit">Send</button>
+        </form>
+      </div>
+
+      <div class="col-xs-12 col-md-7 feedback-display">
+        <% feedback.forEach((feedback) => { %>
+          <div class="well">
+            <p><b><%= feedback.displayName %></b>:</p>
+            <p><%= feedback.content %></p>
+          </div>
+        <% }) %>
+      </div>
+
+    <% include shared/footer.ejs %>
+  </body>
+</html>
