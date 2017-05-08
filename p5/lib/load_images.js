@@ -1,4 +1,4 @@
-// lib/modules/bubble.js
+// lib/modules/Flower.js
 var flowers = [];
 var flower_list = [];
 
