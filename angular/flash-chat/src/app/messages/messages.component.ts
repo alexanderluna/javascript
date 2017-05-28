@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from '../services/firebase.service';
 
 @Component({
   selector: 'app-messages',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessagesComponent implements OnInit {
 
-  constructor() { }
+  messages:any;
+
+  constructor(private firebaseService: FirebaseService) { }
 
   ngOnInit() {
+    this.firebaseService.getMessages().subscribe(messages => {
+      console.log(messages);
+      this.messages = messages;
+    });
   }
 
 }
