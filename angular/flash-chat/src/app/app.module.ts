@@ -8,10 +8,10 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { FirebaseService } from './services/firebase.service';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { MessageComponent } from './message/message.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AddMessageComponent } from './add-message/add-message.component';
@@ -25,7 +25,6 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    MessageComponent,
     NavbarComponent,
     MessagesComponent,
     AddMessageComponent
@@ -37,7 +36,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FlashMessagesModule
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent]
