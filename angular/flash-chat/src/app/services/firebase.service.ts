@@ -18,6 +18,10 @@ export class FirebaseService {
   addMessage(message_object){
     this.item.push(message_object);
   }
+
+  removeMessage(key: string) {
+    this.item.remove(key);
+  }
 }
 
 interface Message {
