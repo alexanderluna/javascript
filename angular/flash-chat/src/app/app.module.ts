@@ -9,16 +9,19 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { FirebaseService } from './services/firebase.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
+import { WeatherService } from './services/weather.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AddMessageComponent } from './add-message/add-message.component';
+import { WeatherComponent } from './weather/weather.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'messages', component: MessagesComponent }
+  { path: 'messages', component: MessagesComponent },
+  { path: 'weather', component: WeatherComponent }
 ]
 
 @NgModule({
@@ -27,7 +30,8 @@ const appRoutes: Routes = [
     HomeComponent,
     NavbarComponent,
     MessagesComponent,
-    AddMessageComponent
+    AddMessageComponent,
+    WeatherComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,10 @@ const appRoutes: Routes = [
     AngularFireAuthModule,
     FlashMessagesModule
   ],
-  providers: [FirebaseService],
+  providers: [
+    FirebaseService,
+    WeatherService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
