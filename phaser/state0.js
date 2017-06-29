@@ -7,13 +7,11 @@ demo.state0 = function(){};
 // define state functions
 demo.state0.prototype = {
   preload: function() {
-    //game.load.image('player', 'assets/player-one.png');
     game.load.spritesheet('player','assets/player-spritesheet.png',127,208);
     game.load.image('tree', 'assets/background.png');
   },
   create: function(){
     // config scene
-    console.log("State 0");
     game.physics.startSystem(Phaser.Physics.ARCADE);
     game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
     game.stage.backgroundColor = '#80FF80';
@@ -24,6 +22,7 @@ demo.state0.prototype = {
     // config spites
     var bgImg =  game.add.sprite(0, 0, 'tree');
     player = game.add.sprite(centerX, centerY, 'player');
+    player.animations.add('walk', [0,1,2]);
     player.anchor.setTo(0.5,0.5);
     player.scale.setTo(0.7,0.7);
     game.physics.enable(player);
@@ -35,11 +34,13 @@ demo.state0.prototype = {
     if (game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)) {
       player.scale.setTo(0.7,0.7);
       player.x += speed;
-      player.angle = 15;
+      //player.angle = 15;
+      player.animations.play('walk', 14, true);
     } else if (game.input.keyboard.isDown(Phaser.Keyboard.LEFT)){
       player.scale.setTo(-0.7,0.7);
       player.x -= speed;
-      player.angle = -15;
+      //player.angle = -15;
+      player.animations.play('walk', 14, true);
     } else if (game.input.keyboard.isDown(Phaser.Keyboard.UP)) {
       player.y -= speed;
       if (player.y < 855) {
@@ -48,6 +49,8 @@ demo.state0.prototype = {
     } else if (game.input.keyboard.isDown(Phaser.Keyboard.DOWN)) {
       player.y += speed;
     } else {
+      player.animations.stop('walk');
+      player.frame = 0;
       player.rotation = 0;
     }
   }
@@ -57,7 +60,8 @@ demo.state0.prototype = {
 
 // change state based on key pressed
 function changeState(i, key) {
-  game.state.start('state'+key)
+  console.log('state'+key);
+  game.state.start('state'+key);
 }
 
 // key down event listener
