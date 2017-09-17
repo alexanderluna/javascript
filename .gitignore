@@ -2,3 +2,4 @@
 /p5/images
 /node_modules
 /ignore/
+.DS_Store
