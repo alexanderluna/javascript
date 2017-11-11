@@ -1,40 +1,30 @@
-#Projects Overview
+# Projects Overview
 
-##Application.js
-A basic project that shows the syntax of an average express app using the morgan logging middleware.
-It is a static file server.
+### Playground (A place to play around)
+- [application.js: static file server](playground/application.js)
+- [capitalize.js: mocha testing](playground/capitalize.js)
+- [demo_api.js: api intro with express](playground/demo_api.js)
+- [hello_world_express.js: express first steps](playground/hello_world_express.js)
+- [hello_world.js: express first steps](playground/hello_world.js)
+- [middleware.js: express middleware](playground/middleware.js)
 
-##Capitalize.js
-A test project created to work with the mocha testing framework. The test unit itself is in the test directory under capitalize.js - [repo](/test/capitalize.js)
 
-##Database App
-This is a short project that implements database integration. It uses the MongoDB database package (mongoose) and the passport package as authentication middleware. This project consists of several files and directories:
+## Database App
+Database integration with MongoDB ```mongoose``` and ```passport``` as authentication middleware. Project file structure :
 
-1. Database Views directory [repo](/database_views)
-2. Database Model directory [repo](/model)
-3. Database router file [repo](/database_routes.js)
-4. Passport setup file [repo](/setuppassport.js)
+1. [Database Views directory](database_views)
+2. [Database Model directory](model)
+3. [Database router file](database_routes.js)
+4. [Passport setup file](setuppassport.js)
 
-##Demo_api
-This project is a short intro into api building using express.
-
-##guestbook.js
+## guestbook.js
 Showcase a guestbook app to which users can add themselves. The views are rendered from the views folder.
 
-##hello_world_express.js & hello_world.js
-My first steps using the express framework and its routing features.
-
-##middleware_auth.js
-A basic idea of how authentication can be implemented within express routing features.
-
-##middleware.js
-A project to get a better idea of how express middleware works.
-
-##router.js
+## router.js
 Taking a deeper look into express routing
 
-##weather.js
+## weather.js
 A project that shows the current weather of the person's location using zip-code input. It does an Ajax request to a weather api to retrieve these values. The views are rendered from the 'weather' directory. [repo](/weather).
 
-##working-with-views.js
+## working-with-views.js
 A first look at how views rendering works in express.
