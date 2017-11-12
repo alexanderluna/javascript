@@ -14,7 +14,8 @@
 - [chunkArrayInGroups](#chunkArrayInGroups)
 - [slasherFlick](#slasherFlick)
 - [mutation](#mutation)
-
+- [destroyer](#destroyer)
+- [getIndexToIns](#getIndexToIns)
 
 
 ### <a name="reverseString">Reverse String</a>
@@ -237,6 +238,46 @@ function mutation(arr) {
     if (!arr_0.includes(i)) { return false; }
   }
   return true;
+}
+```
+---
+
+
+### <a name="destroyer">Destroyer</a>
+
+You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
+
+- [View source](destroyer.js)
+
+```
+function destroyer(arr, ...custom_filter) {
+  for(argument of custom_filter) {
+    arr = arr.filter((item) => {
+      if (item != argument) return item;
+    });
+  }
+  return arr;
+}
+```
+---
+
+
+### <a name="getIndexToIns">Get Index to Ins</a>
+
+Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted. The returned value should be a number.
+
+For example, ```getIndexToIns([1,2,3,4], 1.5)``` should return ```1``` because it is greater than 1 (index 0), but less than 2 (index 1).
+
+- [View source](getIndexToIns.js)
+
+```
+function getIndexToIns(arr, num) {
+  let num_index = 0;
+  var newArr = arr.sort((a,b) => a - b);
+  for(index of newArr) {
+    if(index < num) num_index++;
+  }
+  return num_index;
 }
 ```
 ---
