@@ -1,0 +1,82 @@
+$light-purple: #f9f9ff;
+$purple: rgba(69, 53, 144, 0.97);
+$off-black: #65657f;
+
+body {
+  background-color: $light-purple;
+}
+
+#root {
+  width: 100%
+}
+
+.jumbotron {
+  background-image: url('http://localhost:5000/img/mountain.jpg');
+  background-position: center top;
+  background-size: cover;
+  resize: both;
+  height: 40vh;
+}
+
+.navbar {
+  margin-top: 0.5em;
+}
+.ski-day-count {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border: 0.5em solid $off-black;
+  border-radius: 0.5em;
+  padding: 1em;
+  div {
+    background-color: purple;
+    border-radius: 0.5em;
+    margin: 1em;
+    padding: 1.5em;
+    text-align: center;
+    span {
+      color: white;
+      font-size: 2em;
+    }
+  }
+  .goal {
+    background-color: $purple;
+  }
+}
+
+@media (min-width: 450px) {
+  .table-responsive {
+    border: 0px solid #ddd;
+    .btn-g {
+      text-align: center;
+    }
+    .btn {
+      padding: 0.5em;
+      margin: 0.2em;
+      font-size: 1.5em;
+      width: 30%;
+    }
+  }
+}
+
+@media (max-width: 449px) {
+  .table-responsive {
+    border: 0px solid #ddd;
+    .btn-g {
+      text-align: center;
+    }
+    .btn {
+      padding: 0.5em;
+      font-size: 1.2em;
+      margin-top: 0.5em;
+      width: 100%;
+    }
+  }
+}
+
+input, .input-group {
+  margin-bottom: 1em;
+}
+
+h2 {
+  text-align: center;
+}

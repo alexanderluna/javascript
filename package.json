@@ -36,5 +36,9 @@
     "socket.io": "^1.7.3",
     "supertest": "^2.0.1",
     "zippity-do-dah": "0.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.13.1",
+    "eslint-plugin-react": "^7.5.1"
   }
 }

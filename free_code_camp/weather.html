@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weather</title>
+    <link rel="stylesheet" href="/css/weather.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+
+    <div class="content">
+      <img id="icon"src="img/snow.svg">
+      <div class="weather-box" id="temperature"></div>
+      <div class="weather-box" id="description"></div>
+      <div class="weather-box" id="windspeed"></div>
+      <button class="weather-box" id="btn" onclick="convertTemp()">C&#176;/F&#176;</button>
+    </div>
+
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <script type="text/javascript" src="/js/weather.js"></script>
+  </body>
+</html>

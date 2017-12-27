@@ -1,0 +1,13 @@
+h1 {
+  padding: 0.5em;
+  border-radius: 0.2em;
+}
+
+.hello {
+  background-color: purple;
+}
+
+.goodbye {
+  background-color: blue;
+  margin-top: 1em;
+}

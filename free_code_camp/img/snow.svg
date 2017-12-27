@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512px" height="512px" class=""><g><g>
+	<g>
+		<path d="M391,91c-5.684,0-11.396,0.483-17.446,1.479C345.766,36.508,289.149,0,226,0C148.495,0,82.328,54.569,65.468,129.569    C26.562,145.829,0,183.52,0,226c0,57.891,48.109,106,106,106h285c66.167,0,121-54.833,121-121S457.167,91,391,91z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/>
+	</g>
+</g><g>
+	<g>
+		<circle cx="406" cy="377" r="15" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/>
+	</g>
+</g><g>
+	<g>
+		<path d="M332.465,431.507L316.002,422l16.463-9.507c7.178-4.146,9.639-13.315,5.493-20.493c-4.16-7.192-13.345-9.653-20.493-5.493    L301,396.014V377c0-8.291-6.709-15-15-15c-8.291,0-15,6.709-15,15v19.014l-16.465-9.507c-7.178-4.16-16.348-1.699-20.493,5.493    c-4.146,7.178-1.685,16.348,5.493,20.493L255.998,422l-16.463,9.507c-7.178,4.145-9.639,13.315-5.493,20.493    c4.188,7.253,13.423,9.576,20.493,5.493L271,447.986V467c0,8.291,6.709,15,15,15c8.291,0,15-6.709,15-15v-19.014l16.465,9.507    c7.07,4.083,16.306,1.76,20.493-5.493C342.104,444.822,339.643,435.652,332.465,431.507z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/>
+	</g>
+</g><g>
+	<g>
+		<circle cx="106" cy="377" r="15" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/>
+	</g>
+</g><g>
+	<g>
+		<circle cx="166" cy="407" r="15" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/>
+	</g>
+</g><g>
+	<g>
+		<circle cx="196" cy="497" r="15" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/>
+	</g>
+</g><g>
+	<g>
+		<circle cx="376" cy="497" r="15" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/>
+	</g>
+</g><g>
+	<g>
+		<path d="M136,452h-15v-15c0-8.291-6.709-15-15-15s-15,6.709-15,15v15H76c-8.291,0-15,6.709-15,15c0,8.291,6.709,15,15,15h15v15    c0,8.291,6.709,15,15,15s15-6.709,15-15v-15h15c8.291,0,15-6.709,15-15C151,458.709,144.291,452,136,452z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/>
+	</g>
+</g></g> </svg>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Random Quote Generator</title>
+  </head>
+  <body>
+    <style media="screen">
+      .content {
+        margin: auto;
+        width: 50%;
+        text-align: center;
+        font-family: helvetica, sans-serif;
+      }
+
+      button {
+        padding: 1em;
+        border-radius: 0.5em;
+        border: 0.2px solid #CCCCFF;
+        font-size: 1em;
+        background-color: #CCCCFF;
+        color: #666666;
+      }
+
+      button:hover {
+        background-color: #b2b2ff;
+      }
+
+      #display-quote {
+        visibility: hidden;
+        width: 60%;
+        margin: auto;
+        margin-top: 1em;
+        padding: 1em;
+        font-size: 1.5em;
+        border: 0.2em solid #CCCCFF;
+        border-radius: 0.5em;
+      }
+
+      #tweet-action {
+        margin-left: 2em;
+        padding: 0.2em 0.5em 0.2em 0.5em;
+        color: white;
+        border: 0.5em solid #1da1f2;
+        background-color: #1da1f2;
+        border-radius: 0.5em;
+        text-decoration: none;
+        font-family: helvetica, sans-serif;
+      }
+    </style>
+
+    <div class="content">
+      <h1>Get a random quote</h1>
+      <button type="button" onclick="getQuote()">New Quote</button>
+      <div id="display-quote" >
+        <div id="quote-content"></div>
+        <div id="author"></div>
+      </div>
+    </div>
+
+    <a id="tweet-action" data-size="large">Tweet</a>
+
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <script type="text/javascript">
+      function getQuote() {
+        fetch('http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1')
+          .then(response => response.json())
+          .then(json => json[0])
+          .then(quote => {
+            let twitterLink = "https://twitter.com/intent/tweet?text="
+            document.getElementById('display-quote').style.visibility = "visible"
+            document.getElementById('quote-content').innerHTML = quote.content
+            document.getElementById('author').innerHTML = quote.title
+            document.getElementById('tweet-action').href = twitterLink + quote.content
+          })
+      }
+
+    </script>
+  </body>
+</html>

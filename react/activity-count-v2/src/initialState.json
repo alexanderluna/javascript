@@ -1,0 +1,28 @@
+{
+  "allSkiDays": [
+    {
+      "mountain": "Fuji",
+      "date": "2014-01-15",
+      "snow": true,
+      "hike": false
+    },
+    {
+      "mountain": "Harz",
+      "date": "2012-02-15",
+      "snow": true,
+      "hike": true
+    },
+    {
+      "mountain": "Andes",
+      "date": "2019-06-05",
+      "snow": false,
+      "hike": false
+    }
+  ],
+  "goal": 10,
+  "errors": [],
+  "mountainNames": {
+    "fetching": false,
+    "suggestions": ["Fuji", "Harz", "Andes"]
+  }
+}

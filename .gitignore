@@ -1,5 +1,7 @@
 /threeJS/threeJS
 /p5/images
-/node_modules
 /ignore/
 .DS_Store
+node_modules
+adventofcode/
+.eslintrc.json

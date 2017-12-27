@@ -1,0 +1,13 @@
+.card, .board, button {
+  margin-top: 1.5em;
+}
+
+.card {
+  background-color: #E4E1DE;
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+
+.btn-danger {
+  margin-left: 0.5em;
+}
