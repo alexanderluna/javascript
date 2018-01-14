@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
+html {
+  font-family: 'Roboto Mono', monospace;
+  background-color: #282a36;
+  color: #50fa7b;
+}
+
+body {
+  width: 90%;
+  margin: auto;
+}
+
+.button, #control {
+  background-color: transparent;
+  border: 2px solid #50fa7b;
+}
+
+.button:hover, #control:hover {
+  background-color: #50fa7b;
+  color: #282a36;
+}
+
+
+.row, .session {
+  text-align: center;
+  margin: 0.5em 0em;
+}
+
+.row p {
+  width: 49%;
+  font-size: 2em;
+  margin: 0em;
+}
+
+.session, .button, p {
+  display: inline-block;
+  font-size: 1em;
+}
+
+.session {
+  width: 49%;
+}
+
+.session p {
+  width: 29%;
+}
+
+#control {
+  width: 48%;
+  font-size: 2em;
+  margin: 0em;
+  padding: 0.2em 0em;
+}
+
+#clock {
+  font-size: 25vw;
+  margin: 0em;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pomodoro</title>
+    <link rel="stylesheet" href="./custom.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="header">
+        <div class="row">
+          <p>Session</p>
+          <p>Break</p>
+        </div>
+        <div class="row">
+          <div class="session">
+            <p data-key="session-plus" class="button">+</p>
+            <p id="session-minutes">25</p>
+            <p data-key="session-minus" class="button">-</p>
+          </div>
+
+          <div class="session">
+            <p data-key="break-plus" class="button">+</p>
+            <p id="break-minutes">05</p>
+            <p data-key="break-minus" class="button">-</p>
+          </div>
+        </div>
+      </div><!-- header -->
+
+      <div class="row">
+          <p data-key="start" id="control">start</p>
+          <p data-key="restart" id="control">restart</p>
+      </div><!-- first row -->
+
+      <div class="row">
+        <h1 id="clock">25:00</h1>
+      </div><!-- current time -->
+
+      <div class="row">
+        <p data-key="pause" id="control">pause</p>
+        <p data-key="restart" id="control">stop</p>
+      </div><!-- bottom row -->
+    </div>
+
+    <script type="text/javascript" src="./index.js"></script>
+  </body>
+
+</html>

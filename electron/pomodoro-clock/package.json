@@ -1,0 +1,14 @@
+{
+  "name": "pomodoro-clock",
+  "version": "1.0.0",
+  "description": "Pomodoro clock desktop app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Alexander Luna",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^1.7.10"
+  }
+}
