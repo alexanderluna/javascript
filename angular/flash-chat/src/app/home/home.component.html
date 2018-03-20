@@ -1,8 +1,0 @@
-<div class="jumbotron text-center">
-  <div class="container">
-    <h1>Messages</h1>
-    <p>Check out our Flash chat room</p>
-    <a *ngIf="!(user | async)" class="btn btn-primary" (click)="login()" >Login</a>
-    <a *ngIf="(user | async)" class="btn btn-primary" [routerLink]="['/messages']">Read Messages</a>
-  </div>
-</div>
