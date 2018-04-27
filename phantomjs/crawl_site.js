@@ -1,14 +1,13 @@
-var site = 'http://kissmanga.com/Manga/Mujaki-no-Rakuen'
-var name = "mujaki-no-rakuen"
 
 if ( typeof(phantom) !== "undefined" ) {
   var page = require('webpage').create();
+  var system = require('system');
 
   page.onError = function(msg) {
     return
   }
   page.onConsoleMessage = function(msg) {
-    var chapters = msg.split(',')
+    var chapters = msg.split(',');
     for (var i = 0; i < chapters.length; i++) {
       console.log(chapters[i]);
     }
@@ -17,7 +16,7 @@ if ( typeof(phantom) !== "undefined" ) {
   page.onLoadFinished = function() {
     page.injectJs("crawl_site.js");
   }
-  page.open(site)
+  page.open(system.args[1])
 
 } else {
   // polyfill for includes
@@ -56,7 +55,7 @@ if ( typeof(phantom) !== "undefined" ) {
       if (link.match(/\\?id=/) && !chapters.includes(link)) {
         chapters.push(link);
       }
-      console.log(chapters);
     }
+    console.log(chapters);
   }
 }
