@@ -9,7 +9,6 @@ if ( typeof(phantom) !== "undefined" ) {
 	}
 
 	page.onConsoleMessage = function(msg) {
-		console.log('Creating file: ', system.args[2]);
 		fs.write(system.args[2], msg, 'w');
 		phantom.exit();
 	};
