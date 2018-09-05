@@ -1,0 +1,17 @@
+<% include header %>
+  <h1 id="temperature">What’s your ZIP code?</h1>
+  <h1 id="humidity"></h1>
+    <form class="pure-form">
+      <fieldset>
+        <input type="number" name="zip" placeholder="12345" autofocus required>
+        <input type="submit" class="pure-button pure-button-primary" value="Go">
+      </fieldset>
+  </form>
+  <p>
+    <a href="https://darksky.net/poweredby/" target="_blank">Powered by Dark Sky</a>
+  </p>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="/main.js"></script>
+
+<% include footer %>
