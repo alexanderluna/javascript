@@ -7,4 +7,7 @@ model.add(hidden);
 model.add(output);
 
 model.compile({optimizer: tf.train.sgd(0.1), loss: "meanSquaredError"});
-
+(something) => {
+  console.log(something); 
+  
+}

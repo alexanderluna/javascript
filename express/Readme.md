@@ -1,14 +1,5 @@
 # Projects Overview
 
-### Playground (A place to play around)
-- [application.js: static file server](playground/application.js)
-- [capitalize.js: mocha testing](playground/capitalize.js)
-- [demo_api.js: api intro with express](playground/demo_api.js)
-- [hello_world_express.js: express first steps](playground/hello_world_express.js)
-- [hello_world.js: express first steps](playground/hello_world.js)
-- [middleware.js: express middleware](playground/middleware.js)
-
-
 ## Database App
 Database integration with MongoDB ```mongoose``` and ```passport``` as authentication middleware. Project file structure :
 
@@ -17,8 +8,8 @@ Database integration with MongoDB ```mongoose``` and ```passport``` as authentic
 3. [Database router file](database_routes.js)
 4. [Passport setup file](setuppassport.js)
 
-## guestbook.js
-Showcase a guestbook app to which users can add themselves. The views are rendered from the views folder.
+## guestbook-project/guestbook.js
+Showcase a guestbook app to which users can add themselves. The views are rendered from the views folder using ejs templates.
 
 ## router.js
 Taking a deeper look into express routing
