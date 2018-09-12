@@ -10,13 +10,12 @@ import entries from './routes/api/entries';
 
 const app = express();
 
-mongoose.connect(db.mongoURI, { useNewUrlParser: true })
-  .then(() => console.log('MongoDB is connected'))
-  .catch((err) => console.error('Failed to connect to MongoDB'));
+(async () => {
+  const database = await mongoose.connect(db.mongoURI, { useNewUrlParser: true })
+  console.log(`Database connected: ${database.connection.name}`);
+})()
 
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(passport.initialize());
