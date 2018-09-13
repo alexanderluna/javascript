@@ -1,9 +1,12 @@
 import express from 'express';
+import { ApolloServer } from 'apollo-server-express'
 import graphqlHTTP from 'express-graphql';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import db from './config/config';
-import schema from './schema/schema';
+import typeDefs from './schema/index';
+import resolvers from './resolvers/index';
+// import { typeDefs, resolvers } from './schema/apollo-schema';
 
 const app = express();
 app.use(cors());
@@ -13,12 +16,9 @@ app.use(cors());
   console.log(`Connected to Database: ${database.connection.name}`);
 })()
 
-app.use('/graphql', graphqlHTTP({
-  schema,
-  graphiql: true
-}));
-
+const server = new ApolloServer({ typeDefs, resolvers });
+server.applyMiddleware({ app });
 
 app.listen(4000, () => {
-  console.log('Server running on http://localhost:4000');
+  console.log(`Server ready http://localhost:4000${server.graphqlPath}`);
 });
