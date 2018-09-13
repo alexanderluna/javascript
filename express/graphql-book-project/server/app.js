@@ -4,9 +4,7 @@ import graphqlHTTP from 'express-graphql';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import db from './config/config';
-import typeDefs from './schema/index';
-import resolvers from './resolvers/index';
-// import { typeDefs, resolvers } from './schema/apollo-schema';
+import { typeDefs, resolvers } from './schema/apollo-schema';
 
 const app = express();
 app.use(cors());
