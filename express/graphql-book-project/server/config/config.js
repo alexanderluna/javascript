@@ -1,5 +1,7 @@
 const config = {
-  url: 'mongodb://localhost:27017/graphql-course',
+  DATABASE: 'author_book',
+  DATABASE_USER: 'alexander',
+  DATABASE_PASSWORD: ''
 }
 
 export default config;

@@ -1,10 +1,13 @@
-import mongoose from 'mongoose';
-const Schema = mongoose.Schema;
+const book = (sequelize, DataTypes) => {
+  const Book = sequelize.define('book', {
+    name: { type: DataTypes.STRING },
+    genre: { type: DataTypes.STRING },
+  });
 
-const bookSchema = new Schema({
-  name: String,
-  genre: String,
-  authorId: String
-})
+  Book.associate = models => {
+    Book.belongsTo(models.Author);
+  };
+  return Book;
+};
 
-export default mongoose.model('Book', bookSchema)
+export default book;

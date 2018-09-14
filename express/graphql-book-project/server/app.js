@@ -1,22 +1,22 @@
+import cors from 'cors';
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express'
-import graphqlHTTP from 'express-graphql';
-import mongoose from 'mongoose';
-import cors from 'cors';
-import db from './config/config';
-import { typeDefs, resolvers } from './schema/apollo-schema';
+import models, { sequelize } from './models';
+import typeDefs from './schema';
+import resolvers from './resolvers';
 
 const app = express();
 app.use(cors());
 
-(async () => {
-  const database = await mongoose.connect(db.url, { useNewUrlParser: true });
-  console.log(`Connected to Database: ${database.connection.name}`);
-})()
-
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: { models }
+});
 server.applyMiddleware({ app });
 
-app.listen(4000, () => {
-  console.log(`Server ready http://localhost:4000${server.graphqlPath}`);
+sequelize.sync().then(async () => {
+  app.listen(4000, () => {
+    console.log(`\n🚀 Server address: http://localhost:4000/graphql`);
+  });
 });

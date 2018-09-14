@@ -1,9 +1,13 @@
-import mongoose from 'mongoose';
-const Schema = mongoose.Schema;
+const author = (sequelize, DataTypes) => {
+  const Author = sequelize.define('author', {
+    name: { type: DataTypes.STRING },
+    age: { type: DataTypes.INTEGER },
+  });
 
-const authorSchema = new Schema({
-  name: String,
-  age: Number
-})
+  Author.associate = models => {
+    Author.hasMany(models.Book, { onDelete: 'CASCADE' });
+  };
+  return Author;
+};
 
-export default mongoose.model('Author', authorSchema)
+export default author;
