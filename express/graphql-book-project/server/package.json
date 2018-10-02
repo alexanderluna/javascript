@@ -1,7 +1,7 @@
 {
   "name": "graphql-course",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "license": "MIT",
   "scripts": {
     "start": "nodemon --exec babel-node app.js"
@@ -10,10 +10,7 @@
     "apollo-server-express": "^2.1.0",
     "cors": "^2.8.4",
     "express": "^4.16.3",
-    "express-graphql": "^0.6.12",
     "graphql": "^14.0.2",
-    "lodash": "^4.17.11",
-    "mongoose": "^5.2.17",
     "pg": "^7.4.3",
     "sequelize": "^4.39.0"
   },
