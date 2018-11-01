@@ -11,6 +11,7 @@ const AuthorSchema = gql `
   extend type Query {
     author(id: ID!): Author
     authors: [Author]
+    me: Author
   }
 
   extend type Mutation {

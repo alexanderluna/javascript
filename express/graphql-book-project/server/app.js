@@ -9,14 +9,17 @@ const app = express();
 app.use(cors());
 
 const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-  context: { models }
+    typeDefs,
+    resolvers,
+    context: async () => ({
+        models,
+        me: await models.Author.findByLogin('Alexander'),
+    }),
 });
 server.applyMiddleware({ app });
 
 sequelize.sync().then(async () => {
-  app.listen(4000, () => {
-    console.log(`\n🚀 Server address: http://localhost:4000/graphql`);
-  });
+    app.listen(4000, () => {
+        console.log(`\n🚀 Server address: http://localhost:4000/graphql`);
+    });
 });
