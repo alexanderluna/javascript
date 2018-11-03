@@ -44,11 +44,16 @@ this language:
 
 ## Resources to learn
 
-- [Book] Javascript: The Definitive Guide
-- [Book] Express in Action
-- [Book] JavaScript The Good Parts
-- [Book] Programming JavaScript Applications
-- [Book] React Design Patterns and Best Practices
+### Books
+
+- [Book] [Javascript: The Definitive Guide](https://www.amazon.com/JavaScript-Definitive-Guide-Activate-Guides/dp/0596805527/ref=sr_1_1?ie=UTF8&qid=1541282827&sr=8-1&keywords=Javascript%3A+The+Definitive+Guide&dpID=51WD-F3GobL&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
+- [Book] [Express in Action](https://www.amazon.com/Express-Action-Writing-building-applications/dp/1617292427/ref=sr_1_1?ie=UTF8&qid=1541282856&sr=8-1&keywords=Express+in+Action&dpID=51SavsoSFIL&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
+- [Book] [JavaScript The Good Parts](https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742/ref=sr_1_1?ie=UTF8&qid=1541282874&sr=8-1&keywords=JavaScript+The+Good+Parts&dpID=5131OWtQRaL&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
+- [Book] [Programming JavaScript Applications](https://www.amazon.com/Programming-JavaScript-Applications-Architecture-Libraries/dp/1491950293/ref=sr_1_1?ie=UTF8&qid=1541282892&sr=8-1&keywords=Programming+JavaScript+Applications)
+- [Book] [React Design Patterns and Best Practices](https://www.amazon.com/React-Design-Patterns-Best-Practices/dp/1786464535/ref=sr_1_1_sspa?ie=UTF8&qid=1541282916&sr=8-1-spons&keywords=React+Design+Patterns+and+Best+Practices&psc=1)
+
+### Videos
+
 - [Video] [GraphQL from Novice to Ninja](https://www.youtube.com/watch?v=Y0lDGjwRYKw&list=PL4cUxeGkcC9iK6Qhn-QLcXCXPQUov1U7f)
 - [Video] [Building Data Driven React Application with GraphQL](https://www.pluralsight.com/courses/react-apps-with-relay-graphql-flux)
 - [Video] [MERN Stack Front To Back: Full Stack React, Redux & Node.js](https://www.udemy.com/mern-stack-front-to-back/)
