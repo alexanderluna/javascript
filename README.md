@@ -8,9 +8,10 @@
 > [MDN Web Docs](https://developer.mozilla.org/bm/docs/Web/JavaScript)
 
 ## Index
+
 - [Why Javascript](#why-javascript)
 - [My Goals with Javascript](#my-goals-with-javascript)
-- [Projects](#)
+- [Projects](/)
     - [Earthquake Tracker](https://github.com/alexanderluna/earthquake-tracker)
     - [NASA Image of the Day](https://github.com/alexanderluna/nasa-udacity)
     - [Kana Trainer](https://github.com/alexanderluna/kana-trainer)
