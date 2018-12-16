@@ -1,11 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 class UserHeader extends React.Component {
+
     render() {
         return (
-            <div className="">user header</div>
+            <div className="">
+                {this.props.user && this.props.user.name}
+            </div>
         )
     }
 }
 
-export default UserHeader;
+const mapStateToProps = (state, ownProps) => {
+    return { user: state.users.find(user => user.id === ownProps.userId) };
+}
+
+
+export default connect(mapStateToProps)(UserHeader);
