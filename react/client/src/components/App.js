@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route } from 'react-router-dom';
-import StreamCreate from './steams/StreamCreate';
-import StreamEdit from './steams/StreamEdit';
-import StreamIndex from './steams/StreamIndex';
-import StreamShow from './steams/StreamShow';
-import StreamDelete from './steams/StreamDelete';
+import StreamCreate from './streams/StreamCreate';
+import StreamEdit from './streams/StreamEdit';
+import StreamIndex from './streams/StreamIndex';
+import StreamShow from './streams/StreamShow';
+import StreamDelete from './streams/StreamDelete';
 import Header from './Header';
 
 export class App extends Component {
