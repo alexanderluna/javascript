@@ -15,10 +15,10 @@ export class App extends Component {
                     <div className="">
                         <Header />
                         <Route path="/" exact component={StreamIndex} />
-                        <Route path="/new" component={StreamCreate} />
-                        <Route path="/edit" component={StreamEdit} />
-                        <Route path="/show" component={StreamShow} />
-                        <Route path="/delete" component={StreamDelete} />
+                        <Route path="/streams/new" component={StreamCreate} />
+                        <Route path="/streams/edit" component={StreamEdit} />
+                        <Route path="/streams/show" component={StreamShow} />
+                        <Route path="/streams/delete" component={StreamDelete} />
                     </div>
                 </BrowserRouter>
             </div>
