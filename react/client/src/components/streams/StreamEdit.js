@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-export class StreamEdit extends Component {
-    render() {
-        return (
-            <div>
-                Edit
-            </div>
-        )
-    }
+class StreamEdit extends Component {
+  render() {
+    return (
+      <div>
+        Edit
+      </div>
+    );
+  }
 }
 
-export default StreamEdit
+export default StreamEdit;

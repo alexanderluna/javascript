@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export class ErrorMessage extends Component {
-    render() {
-        return (
-            <div className="ui error message">
-                <div className="header">
-                    {this.props.children}
-                </div>
-            </div>
-        )
-    }
-}
+const ErrorMessage = ({ children }) => (
+  <div className="ui error message">
+    <div className="header">{children}</div>
+  </div>
+);
+
+ErrorMessage.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default ErrorMessage;
