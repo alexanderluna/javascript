@@ -3,15 +3,18 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 class StreamItem extends Component {
-  renderSomething = () => true
+  get editLink() {
+    const { stream } = this.props;
+    return `/streams/edit/${stream.id}`;
+  }
 
   render() {
-    const { stream, isAdmin } = this.props;
+    const { stream, canEdit } = this.props;
     return (
       <div className="item">
-        {isAdmin && (
+        {canEdit && (
           <div className="right floated content">
-            <Link to="/streams/edit" className="ui button primary">
+            <Link to={this.editLink} className="ui button primary">
               Edit
             </Link>
             <Link to="/streams/edit" className="ui button negative">
@@ -32,7 +35,7 @@ class StreamItem extends Component {
 }
 
 StreamItem.propTypes = {
-  isAdmin: PropTypes.bool.isRequired,
+  canEdit: PropTypes.bool.isRequired,
   stream: PropTypes.objectOf(PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
