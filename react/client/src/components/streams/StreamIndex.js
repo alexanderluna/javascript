@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchStreams } from '../../actions';
-import StreamItem from './helper/StreamItem';
+import StreamItem from './partials/StreamItem';
 
 class StreamIndex extends Component {
   componentDidMount = () => {
@@ -20,7 +20,7 @@ class StreamIndex extends Component {
             <StreamItem
               key={stream.id}
               stream={stream}
-              isAdmin={user === stream.userId}
+              canEdit={user === stream.userId}
             />
           ))}
         </div>
@@ -36,11 +36,6 @@ class StreamIndex extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  streams: Object.values(state.stream),
-  user: state.auth.userId,
-});
-
 StreamIndex.propTypes = {
   user: PropTypes.string,
   fetchStreams: PropTypes.func.isRequired,
@@ -48,7 +43,12 @@ StreamIndex.propTypes = {
 };
 
 StreamIndex.defaultProps = {
-  user: '3948938748334534',
+  user: null,
 };
+
+const mapStateToProps = state => ({
+  streams: Object.values(state.streams),
+  user: state.auth.userId,
+});
 
 export default connect(mapStateToProps, { fetchStreams })(StreamIndex);
