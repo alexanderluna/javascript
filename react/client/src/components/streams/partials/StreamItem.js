@@ -8,6 +8,11 @@ class StreamItem extends Component {
     return `/streams/edit/${stream.id}`;
   }
 
+  get deleteLink() {
+    const { stream } = this.props;
+    return `/streams/delete/${stream.id}`;
+  }
+
   render() {
     const { stream, canEdit } = this.props;
     return (
@@ -17,7 +22,7 @@ class StreamItem extends Component {
             <Link to={this.editLink} className="ui button primary">
               Edit
             </Link>
-            <Link to="/streams/edit" className="ui button negative">
+            <Link to={this.deleteLink} className="ui button negative">
               Delete
             </Link>
           </div>
