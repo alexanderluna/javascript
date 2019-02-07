@@ -1,68 +1,140 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Streamy
 
-## Available Scripts
+The application covers CRUD operations using `redux` as the central state
+manager and `redux-form` for handling forms and validation. The backend API
+is based on the `json-server` package and a JSON file as a database.
 
-In the project directory, you can run:
+## Index
 
-### `npm start`
+- [Streamy](#streamy)
+  - [Index](#index)
+  - [React](#react)
+    - [App](#app)
+    - [Header](#header)
+    - [Stream](#stream)
+      - [StreamCreate](#streamcreate)
+      - [StreamIndex](#streamindex)
+      - [StreamShow](#streamshow)
+      - [StreamEdit](#streamedit)
+      - [StreamDelete](#streamdelete)
+      - [Partials](#partials)
+        - [ErrorMessage](#errormessage)
+        - [Modal](#modal)
+        - [StreamForm](#streamform)
+        - [StreamItem](#streamitem)
+      - [Validators](#validators)
+  - [Redux](#redux)
+    - [Actions](#actions)
+    - [Reducers](#reducers)
+  - [APIs](#apis)
+  - [Miscellaneous](#miscellaneous)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## React
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+The `react` part of the application consits of an app the holds the
+`react-router`. Each CRUD operation has its own component inside the stream
+folder.
 
-### `npm test`
+### App
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The App component renders the `react-router` with routes for each CRUD operation
+and the Header of the app that persists across all routes.
 
-### `npm run build`
+### Header
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The Header component persists across all routes and hold the
+GoogleAuthentication component which is responsible for handling user
+authentication using the google API.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### Stream
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The stream folder holds all the Stream components accessible through the router
+as well as partials to improve component reusability.
 
-### `npm run eject`
+#### StreamCreate
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Calls the `streamCreate` redux action which in turn creates a new Stream with
+the `redux-from` values.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### StreamIndex
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Calls the `fetchStreams` redux action to load all the available streams.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### StreamShow
 
-## Learn More
+Calls the `fetchStream` redux action to show a single stream using the router
+`:id` parameter.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### StreamEdit
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Calls the `fetchStream` redux action with the router `:id` parameter to populate
+the `redux-form` with the stream's values. After that, it calls the `streamEdit`
+redux action to update the stream using `PATCH`.
 
-### Code Splitting
+#### StreamDelete
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Calls the `fetchStream` redux action with the router `:id` parameter to prompt
+the user a confimation dialogue using a `React Portal`. When the user confirms
+the deletion the `deleteStream` redux action deletes the stream.
 
-### Analyzing the Bundle Size
+#### Partials
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+This folder includes components that are reused severaled times or improve the
+readability of the components that use them.
 
-### Making a Progressive Web App
+##### ErrorMessage
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+This functional component displays a styled error message using the children
+prop. It's main function is to make the [StreamForm](#streamform) more readable.
 
-### Advanced Configuration
+##### Modal
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+This is a Modal dialogue using `React Portal`. For reusability purposes it
+accepts props for title, description, actions and dismiss handlers.
 
-### Deployment
+##### StreamForm
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+This component holds the form for creating and editing streams. `redux-forms`
+handles the state management of the form.
 
-### `npm run build` fails to minify
+##### StreamItem
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Renders each stream of the list of streams and has event handlers for showing,
+editing and deleting a stream.
+
+#### Validators
+
+This file holds the `redux-form` validators to keep the
+[StreamForm](#streamform) cleaner.
+
+## Redux
+
+The redux part actions and reducers for stream CRUD operations, redux-form state
+and google authentication state.
+
+### Actions
+
+The actions uses redux-thunk to handle async API calls and conditionally calling
+other actions as is the case with the `onAuthChange` action which calls the
+`signIn` or `signOut` action depending on the current google authentication
+status.
+
+### Reducers
+
+Each action has it's own reducer and the `index.js` file combines them all
+including the `redux-form`.
+
+## APIs
+
+The application uses 2 different APIs. The `googleAuthentication` API imports
+the required Google API (gapi) files and setups the authentication with a
+token and scope which any component can make use of. The `streams` API is much
+simpler as it only preconfigures axios to make API calls in the redux actions
+more concise.
+
+## Miscellaneous
+
+The `history` file creates a history object which the `react-router` uses. It's
+main purpose is to provide a callable history object to allow redux actions and
+components to redirect the user when needed. Redux actions fall out of the scope
+of the `react-router`.
