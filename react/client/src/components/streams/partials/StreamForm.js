@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
-import ErrorMessage from '../../ErrorMessage';
+import ErrorMessage from './ErrorMessage';
 import {
   requiredTitle,
   requiredDescription,
