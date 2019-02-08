@@ -13,6 +13,11 @@ class StreamItem extends Component {
     return `/streams/delete/${stream.id}`;
   }
 
+  get showLink() {
+    const { stream } = this.props;
+    return `/streams/${stream.id}`;
+  }
+
   render() {
     const { stream, canEdit } = this.props;
     return (
@@ -29,7 +34,9 @@ class StreamItem extends Component {
         )}
         <i className="large middle aligned icon camera" />
         <div className="content">
-          {stream.title}
+          <Link to={this.showLink} className="header">
+            {stream.title}
+          </Link>
           <div className="description">
             {stream.description}
           </div>
