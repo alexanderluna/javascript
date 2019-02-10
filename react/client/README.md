@@ -8,7 +8,7 @@ is based on the `json-server` package and a JSON file as a database.
 
 - [Streamy](#streamy)
   - [Index](#index)
-  - [RTMP setup with OBS streaming software](#rtmp-setup-with-obs-streaming-software)
+  - [RTMP setup (OBS streaming software)](#rtmp-setup-obs-streaming-software)
   - [React](#react)
     - [App](#app)
     - [Header](#header)
@@ -30,7 +30,7 @@ is based on the `json-server` package and a JSON file as a database.
   - [APIs](#apis)
   - [Miscellaneous](#miscellaneous)
 
-## RTMP setup with OBS streaming software
+## RTMP setup (OBS streaming software)
 
 > Settings -> Stream
 
