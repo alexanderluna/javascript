@@ -8,6 +8,7 @@ is based on the `json-server` package and a JSON file as a database.
 
 - [Streamy](#streamy)
   - [Index](#index)
+  - [RTMP setup with OBS streaming software](#rtmp-setup-with-obs-streaming-software)
   - [React](#react)
     - [App](#app)
     - [Header](#header)
@@ -28,6 +29,19 @@ is based on the `json-server` package and a JSON file as a database.
     - [Reducers](#reducers)
   - [APIs](#apis)
   - [Miscellaneous](#miscellaneous)
+
+## RTMP setup with OBS streaming software
+
+> Settings -> Stream
+
+Stream Type : Custom Streaming Server
+
+URL : rtmp://localhost/live
+
+Stream key : STREAM_NAME
+
+to access the RTMP server use the stream key as the `{:id}` variable.
+http://localhost:8000/live/{:id}.flv
 
 ## React
 
