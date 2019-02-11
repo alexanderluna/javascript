@@ -41,7 +41,7 @@ URL : rtmp://localhost/live
 Stream key : STREAM_NAME
 
 to access the RTMP server use the stream key as the `{:id}` variable.
-http://localhost:8000/live/{:id}.flv
+rtmp://localhost:8000/live/{:id}.flv
 
 ## React
 
