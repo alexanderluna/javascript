@@ -1,0 +1,17 @@
+{
+    "name": "videoinfo",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "start": "electron ."
+    },
+    "dependencies": {
+        "electron": "^6.0.0"
+    },
+    "devDependencies": {
+        "eslint": "^5.16.0",
+        "eslint-config-airbnb-base": "^13.2.0",
+        "eslint-plugin-import": "^2.18.2"
+    }
+}
