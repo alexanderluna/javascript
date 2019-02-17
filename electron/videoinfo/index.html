@@ -10,6 +10,40 @@
 
 <body>
     <h2>Video Info V1.0</h2>
+    <form>
+        <div class="">
+            <label for="">Select video</label>
+            <input type="file" accept="video/*">
+        </div>
+        <button type="submit">Get Information</button>
+    </form>
+
+    <h2 id="result"></h2>
+
+    <script>
+        const {
+            ipcRenderer
+        } = require('electron');
+
+        function analyzeVideo() {
+            const {
+                path
+            } = document.querySelector('input').files[0];
+            ipcRenderer.send('videoSubmit', path);
+            ipcRenderer.on('videoAnalyzed', (event, {
+                format
+            }) => {
+                const result = document.querySelector('#result');
+                const minutes = Math.floor(format.duration / 60);
+                const seconds = Math.round(format.duration % 60);
+                result.innerHTML = `Video duration: ${minutes}:${seconds}`;
+            })
+        }
+        document.querySelector('form').addEventListener('submit', event => {
+            event.preventDefault();
+            analyzeVideo();
+        });
+    </script>
 </body>
 
 </html>
