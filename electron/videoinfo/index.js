@@ -16,6 +16,7 @@ function createWindow() {
 ipcMain.on('videoSubmit', (event, path) => {
   ffmpeg.ffprobe(path, (err, metadata) => {
     if (err) throw new Error('Couldn\'t analyze video');
+    console.log(metadata);
     mainWindow.webContents.send('videoAnalyzed', metadata);
   });
 });
