@@ -3,11 +3,13 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "start": "electron ."
+        "start": "electron .",
+				"watch": "nodemon --exec 'electron .'"
     },
     "license": "MIT",
     "dependencies": {
-        "electron": "^6.0.0"
+        "electron": "^6.0.0",
+        "nodemon": "^1.19.1"
     },
     "devDependencies": {
         "eslint": "^4.19.1",
