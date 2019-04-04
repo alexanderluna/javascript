@@ -10,6 +10,24 @@
 
 <body>
     <h2>My Todos</h2>
+    <ul></ul>
+    <script>
+        const {
+            ipcRenderer
+        } = require('electron');
+
+        const list = document.querySelector('ul');
+
+        ipcRenderer.on('todoAdd', (event, todo) => {
+            const li = document.createElement("li");
+            li.innerText = todo;
+            list.appendChild(li);
+        });
+
+        ipcRenderer.on('todoClear', () => {
+            list.innerHTML = '';
+        });
+    </script>
 </body>
 
 </html>
