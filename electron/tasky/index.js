@@ -4,7 +4,7 @@ let mainWindow;
 
 function createMainWindow() {
   mainWindow = new BrowserWindow({});
-  mainWindow.loadFile('public/index.html');
+  mainWindow.loadURL('http://localhost:3000');
 }
 
 app.on('ready', () => {
