@@ -4,4 +4,4 @@ Each HTML file imports the p5.js library and its corresponding sketch file as we
 
 ## space_bar.html
 
-A nice retro Brick game
+A nice retro Brick game. You can play it here: https://codepen.io/mr-moon/pen/EoRPpx
