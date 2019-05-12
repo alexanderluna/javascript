@@ -1,17 +1,25 @@
-const { app, BrowserWindow } = require('electron');
+const path = require('path');
+const { app, ipcMain } = require('electron');
+const player = require('play-sound')();
+const TimerTray = require('./app/TimerTray');
+const MainWindow = require('./app/MainWindow');
+
+app.commandLine.appendSwitch('disable-renderer-backgrounding');
+app.commandLine.appendSwitch('disable-background-timer-throttling');
 
 let mainWindow;
-
-function createMainWindow() {
-  mainWindow = new BrowserWindow({
-    height: 500,
-    width: 300,
-    frame: false,
-    resizable: false,
-  });
-  mainWindow.loadURL('http://localhost:3000');
-}
+let tray;
 
 app.on('ready', () => {
-  createMainWindow();
+  app.dock.hide();
+  mainWindow = new MainWindow();
+  const imageFilePath = path.join(__dirname, 'assets', 'taskyIcon.png');
+  tray = new TimerTray(imageFilePath, mainWindow);
+});
+
+ipcMain.on('timerUpdate', (_, timeLeft) => {
+  tray.setTitle(timeLeft);
+  if (timeLeft === '') {
+    player.play('./assets/alarm.m4r');
+  }
 });
