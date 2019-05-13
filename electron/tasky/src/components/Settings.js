@@ -1,4 +1,14 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+
+const styles = {
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  pointer: {
+    cursor: 'pointer',
+  },
+};
 
 class Settings extends Component {
   constructor(props) {
@@ -6,30 +16,28 @@ class Settings extends Component {
 
     this.state = {
       time: props.timer.time,
-      unit: props.timer.unit
+      unit: props.timer.unit,
     };
   }
 
-  onSubmit = e => {
-    e.preventDefault();
+  onSubmit = (event) => {
+    event.preventDefault();
     this.props.handleSubmit(this.state);
   };
 
   buttonStyle = () => {
     const { time, unit } = this.state;
-    const propsTime = this.props.timer.time;
-    const propsUnit = this.props.timer.unit;
+    const { timer } = this.props;
 
-    if (time == propsTime && unit == propsUnit) {
-      // double equals to avoid type check
-      return "btn disabled";
+    if (time === timer.time && unit === timer.unit) {
+      return 'btn disabled';
     }
 
-    if (this.props.timer.active) {
-      return "btn disabled";
+    if (timer.active) {
+      return 'btn disabled';
     }
 
-    return "btn";
+    return 'btn';
   };
 
   render() {
@@ -62,26 +70,25 @@ class Settings extends Component {
               </select>
             </li>
             <li className="collection-item right">
-              <button type="submit" className={this.buttonStyle()}>Save</button>
+              <button
+                type="submit"
+                className={this.buttonStyle()}
+              >
+                Save
+              </button>
             </li>
           </form>
         </ul>
-        <button className="btn red" onClick={this.props.handleDataReset}>
+        <button
+          type="button"
+          className="btn red"
+          onClick={this.props.handleDataReset}
+        >
           Reset Data
         </button>
       </div>
     );
   }
 }
-
-const styles = {
-  container: {
-    display: "flex",
-    flexDirection: "column"
-  },
-  pointer: {
-    cursor: "pointer"
-  }
-};
 
 export default Settings;
