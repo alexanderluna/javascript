@@ -10,6 +10,9 @@ const app = express();
   console.log(`☁️ Database connected: ${db.connection.name}`);
 })();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 app.use('/api/entries', entries);
 
 const PORT = process.argv.PORT || 3000;
