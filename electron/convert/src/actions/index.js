@@ -1,9 +1,11 @@
 import { ADD_VIDEO, ADD_VIDEOS, REMOVE_VIDEO, REMOVE_ALL_VIDEOS, VIDEO_PROGRESS, VIDEO_COMPLETE } from "./types";
+const { ipcRenderer } = window.require("electron");
 
-// TODO: Communicate to MainWindow process that videos
-// have been added and are pending conversion
 export const addVideos = videos => dispatch => {
-
+  ipcRenderer.send('videosAdded', videos);
+  ipcRenderer.on('metadataComplete', (event, results) => {
+    dispatch({ type: ADD_VIDEOS, payload: results });
+  });
 };
 
 
