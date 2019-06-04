@@ -41,7 +41,7 @@ class VideoSelectScreen extends Component {
         <Dropzone
           onDrop={this.onDrop}
           multiple
-          accept="video/* *.mkv"
+          accept="video/*,.mkv"
           className="dropzone"
           activeClassName="dropzone-active"
           rejectClassName="dropzone-reject"
