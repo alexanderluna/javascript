@@ -1,4 +1,6 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const {
+  app, BrowserWindow, ipcMain, shell,
+} = require('electron');
 const ffmpeg = require('fluent-ffmpeg');
 const _ = require('lodash');
 
@@ -21,21 +23,39 @@ app.on('ready', () => {
 });
 
 ipcMain.on('videosAdded', (event, videos) => {
-  const promises = _.map(videos, (video) => {
-    return new Promise((resolve, reject) => {
-      ffmpeg.ffprobe(video.path, (err, metadata) => {
+  const promises = _.map(videos, (video) => (
+    new Promise((resolve, reject) => {
+      ffmpeg.ffprobe(video.path, (err, { format: { duration } }) => {
         if (err) reject(err);
-        resolve({
-          ...video,
-          duration: metadata.format.duration,
-          format: 'avi'
-        });
+        resolve({ ...video, duration, format: 'avi' });
       });
-    });
-  });
+    })
+  ));
 
   Promise.all(promises)
     .then((results) => {
-      mainWindow.webContents.send('metadataComplete', results)
+      mainWindow.webContents.send('metadataComplete', results);
     });
+});
+
+ipcMain.on('conversionStart', (event, videos) => {
+  _.each(videos, (video) => {
+    const outputDirectory = video.path.split(video.name)[0];
+    const outputName = video.name.split('.')[0];
+    const outputPath = `${outputDirectory}${outputName}.${video.format}`;
+
+    ffmpeg(video.path)
+      .output(outputPath)
+      .on('progress', ({ timemark }) => {
+        mainWindow.webContents.send('conversionProgress', { video, timemark });
+      })
+      .on('end', () => {
+        mainWindow.webContents.send('conversionEnd', { video, outputPath });
+      })
+      .run();
+  });
+});
+
+ipcMain.on('folderOpen', (event, outputPath) => {
+  shell.showItemInFolder(outputPath);
 });
