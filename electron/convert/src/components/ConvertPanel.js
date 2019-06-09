@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router'
-import * as actions from '../actions';
+import { withRouter } from 'react-router';
+import { convertVideos, removeAllVideos } from '../actions';
 
 class ConvertPanel extends Component {
-
   onCancelPressed = () => {
     this.props.removeAllVideos();
-    this.props.history.push('/')
+    this.props.history.push('/');
   }
 
   render() {
@@ -21,9 +20,9 @@ class ConvertPanel extends Component {
         </button>
       </div>
     );
-  };
+  }
 }
 
 export default withRouter(
-  connect(null, actions)(ConvertPanel)
+  connect(null, { convertVideos, removeAllVideos })(ConvertPanel),
 );
