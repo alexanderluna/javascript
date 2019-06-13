@@ -44,7 +44,7 @@ this language:
 - D3, three js, babylon, phaser
 - Jest testing
 
-## Resources to learn
+## Resources I used to learn
 
 ### Books
 
@@ -61,3 +61,6 @@ this language:
 - [Video] [MERN Stack Front To Back: Full Stack React, Redux & Node.js](https://www.udemy.com/mern-stack-front-to-back/)
 - [Video] [Advanced Express - Web Application Development](https://www.lynda.com/Express-js-tutorials/Mastering-Express-Web-Application-Development/521234-2.html)
 - [Video] [Advanced Node.js](https://www.pluralsight.com/courses/nodejs-advanced)
+- [Video] [React & Redux](https://www.udemy.com/react-redux/)
+- [Video] [Electron for Desktop apps](https://www.udemy.com/electron-react-tutorial/)
+- [Video] [Udacity React Nanodegree](https://www.udacity.com/course/react-nanodegree--nd019)
