@@ -1,10 +1,17 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const windowStateKeeper = require('electron-window-state');
 
 let mainWindow;
 
+ipcMain.on('newItem', (event, itemUrl) => {
+  console.log(itemUrl);
+  setTimeout(() => {
+    event.sender.send('newItemSuccess', 'New item from main process');
+  }, 2000);
+});
+
 const createWindow = () => {
-  let state = windowStateKeeper({
+  const state = windowStateKeeper({
     defaultWidth: 500,
     defaultHeight: 650,
   });
