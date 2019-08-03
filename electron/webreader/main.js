@@ -1,13 +1,13 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const windowStateKeeper = require('electron-window-state');
+const readItem = require('./readItem');
 
 let mainWindow;
 
 ipcMain.on('newItem', (event, itemUrl) => {
-  console.log(itemUrl);
-  setTimeout(() => {
-    event.sender.send('newItemSuccess', 'New item from main process');
-  }, 2000);
+  readItem(itemUrl, (item) => {
+    event.sender.send('newItemSuccess', item);
+  });
 });
 
 const createWindow = () => {
