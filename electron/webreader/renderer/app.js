@@ -6,6 +6,15 @@ const closeModal = document.getElementById('close-modal');
 const modal = document.getElementById('modal');
 const addItem = document.getElementById('add-item');
 const itemUrl = document.getElementById('url');
+const search = document.getElementById('search');
+
+search.addEventListener('keyup', (event) => {
+  Array.from(document.getElementsByClassName('read-item'))
+    .forEach((item) => {
+      const hasMatch = item.innerText.toLowerCase().includes(search.value);
+      item.style.display = hasMatch ? 'flex' : 'none';
+    });
+});
 
 const toggleModalButton = () => {
   if (addItem.disabled === true) {
