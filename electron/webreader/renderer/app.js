@@ -16,6 +16,12 @@ search.addEventListener('keyup', (event) => {
     });
 });
 
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+    items.changeSelection(event.key);
+  }
+});
+
 const toggleModalButton = () => {
   if (addItem.disabled === true) {
     addItem.disabled = false;
