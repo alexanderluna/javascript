@@ -8,7 +8,7 @@ const addItem = document.getElementById('add-item');
 const itemUrl = document.getElementById('url');
 const search = document.getElementById('search');
 
-search.addEventListener('keyup', (event) => {
+search.addEventListener('keyup', () => {
   Array.from(document.getElementsByClassName('read-item'))
     .forEach((item) => {
       const hasMatch = item.innerText.toLowerCase().includes(search.value);
