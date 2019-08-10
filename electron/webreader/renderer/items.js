@@ -14,7 +14,6 @@ exports.storage = JSON.parse(localStorage.getItem('webreader')) || [];
 
 window.addEventListener('message', (event) => {
   if (event.data.action === 'delete-reader-item') {
-    console.log(event.data);
     this.delete(event.data.itemIndex);
     event.source.close();
   }
@@ -22,7 +21,6 @@ window.addEventListener('message', (event) => {
 
 
 exports.delete = (itemIndex) => {
-  console.log('items list', items);
   items.removeChild(items.children[itemIndex]);
   this.storage.splice(itemIndex, 1);
   this.save();
