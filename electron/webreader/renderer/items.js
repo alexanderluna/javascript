@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { shell } = require('electron');
 
 const items = document.getElementById('items');
 let readerJS;
@@ -114,6 +115,13 @@ exports.addItem = (newItem) => {
   this.renderItem(newItem);
   this.storage.push(newItem);
   this.save();
+};
+
+
+exports.openInBrowser = () => {
+  if (!this.storage.length) return;
+  const selectedItem = this.getSelectedItem();
+  shell.openExternal(selectedItem.node.dataset.url);
 };
 
 

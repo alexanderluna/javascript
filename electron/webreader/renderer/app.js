@@ -1,12 +1,36 @@
 const { ipcRenderer } = require('electron');
 const items = require('./items');
 
+
 const showModal = document.getElementById('show-modal');
 const closeModal = document.getElementById('close-modal');
 const modal = document.getElementById('modal');
 const addItem = document.getElementById('add-item');
 const itemUrl = document.getElementById('url');
 const search = document.getElementById('search');
+
+
+window.newItem = () => {
+  showModal.click();
+};
+
+
+window.openItem = items.open;
+
+
+window.deleteItem = () => {
+  const selectedItem = items.getSelectedItem();
+  items.delete(selectedItem.index);
+};
+
+
+window.openInBrowser = items.openInBrowser;
+
+
+window.searchItems = () => {
+  search.focus();
+};
+
 
 search.addEventListener('keyup', () => {
   Array.from(document.getElementsByClassName('read-item'))
@@ -16,11 +40,13 @@ search.addEventListener('keyup', () => {
     });
 });
 
+
 document.addEventListener('keydown', (event) => {
   if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
     items.changeSelection(event.key);
   }
 });
+
 
 const toggleModalButton = () => {
   if (addItem.disabled === true) {
@@ -36,14 +62,17 @@ const toggleModalButton = () => {
   }
 };
 
+
 showModal.addEventListener('click', () => {
   modal.style.display = 'flex';
   itemUrl.focus();
 });
 
+
 closeModal.addEventListener('click', () => {
   modal.style.display = 'none';
 });
+
 
 addItem.addEventListener('click', () => {
   if (itemUrl.value) {
@@ -52,12 +81,14 @@ addItem.addEventListener('click', () => {
   }
 });
 
+
 ipcRenderer.on('newItemSuccess', (event, newItem) => {
   items.addItem(newItem);
   toggleModalButton();
   modal.style.display = 'none';
   itemUrl.value = '';
 });
+
 
 itemUrl.addEventListener('keyup', (event) => {
   if (event.key === 'Enter') {
