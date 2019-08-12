@@ -4,10 +4,18 @@
     "main": "main.js",
     "license": "MIT",
     "scripts": {
-        "dev": "nodemon --exec electron ."
+        "start": "nodemon --exec electron .",
+        "build-mac": "electron-builder -m"
+    },
+    "build": {
+        "appId": "com.alexanderluna.webreader",
+        "directories": {
+            "buildResources": "."
+        }
     },
     "devDependencies": {
         "electron": "^6.0.12",
+        "electron-builder": "^21.2.0",
         "eslint": "^6.5.1",
         "eslint-config-airbnb-base": "^14.0.0",
         "eslint-plugin-import": "^2.18.2",
