@@ -7,3 +7,21 @@ bookmark.
 The app uses a responsive design with CSS flexbox and extensive keyboard
 support. It also has a custom menu bar with actions and keyboard shortcuts to
 access them.
+
+## Building
+
+In order to build the app you will need a cetificate for both mac and windows.
+On a mac, `electron-builder` automatically signs the app for mac builds. For the
+windows build however, you need to generate your own certificate as followed:
+
+1. Open keychain access
+2. Create a Certificate with a type of `Code Signing`
+3. Navigate to the `Certificates` tab
+4. Export the created Certificate (in .p12 format)
+5. Move the Certificate into the project folder
+6. Update the `certificateFile` property in `package.json`
+
+```bash
+# build for macOS
+yarn build-mac
+```

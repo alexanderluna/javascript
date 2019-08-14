@@ -11,6 +11,13 @@
         "appId": "com.alexanderluna.webreader",
         "directories": {
             "buildResources": "."
+        },
+        "mac": {
+            "category": "public.app-category.productivity"
+        },
+        "win": {
+            "certificateFile": "pathToYourCertificate.p12",
+            "verifyUpdateCodeSignature": false
         }
     },
     "devDependencies": {
