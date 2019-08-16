@@ -1,6 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const windowStateKeeper = require('electron-window-state');
 const readItem = require('./readItem');
+const updater = require('./updater');
 
 let mainWindow;
 
@@ -39,7 +40,10 @@ const createWindow = () => {
   });
 };
 
-app.on('ready', createWindow);
+app.on('ready', () => {
+  createWindow();
+  setTimeout(updater.check, 2000);
+});
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {

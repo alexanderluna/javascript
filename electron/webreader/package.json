@@ -5,7 +5,9 @@
     "license": "MIT",
     "scripts": {
         "start": "nodemon --exec electron .",
-        "build-mac": "electron-builder -m"
+        "build": "electron-builder -mwl",
+        "build-mac": "electron-builder -m",
+        "publish": "electron-builder build -mwl -p onTagOrDraft"
     },
     "build": {
         "appId": "com.alexanderluna.webreader",
@@ -13,9 +15,15 @@
             "buildResources": "."
         },
         "mac": {
+            "publish": [
+                "github"
+            ],
             "category": "public.app-category.productivity"
         },
         "win": {
+            "publish": [
+                "github"
+            ],
             "certificateFile": "pathToYourCertificate.p12",
             "verifyUpdateCodeSignature": false
         }
@@ -23,6 +31,8 @@
     "devDependencies": {
         "electron": "^6.0.12",
         "electron-builder": "^21.2.0",
+        "electron-log": "^3.0.8",
+        "electron-updater": "^4.1.2",
         "eslint": "^6.5.1",
         "eslint-config-airbnb-base": "^14.0.0",
         "eslint-plugin-import": "^2.18.2",
