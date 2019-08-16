@@ -25,3 +25,18 @@ windows build however, you need to generate your own certificate as followed:
 # build for macOS
 yarn build-mac
 ```
+
+## Auto Updating
+
+`electron-builder` takes care of automatically uploading the build targets to
+github and updating our app but for that we have to configure our github
+repository and `electron-builder` in the `package.json`:
+
+1. create a release
+2. generate a personal access token (full repo controll)
+3. DO NOT COMMIT THE TOKEN
+4. Set the `GH_TOKEN` environment variable to your access token
+
+```bash
+GH_TOKEN=ksjdncks yarn publish
+```
