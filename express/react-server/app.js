@@ -6,6 +6,7 @@ const keys = require('./config/keys');
 require('./models/User');
 require('./services/passport');
 const authRoutes = require('./routes/authRoutes');
+const sessionRoutes = require('./routes/sessionRoutes');
 
 mongoose.connect(
   keys.mongoURI,
@@ -25,5 +26,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/auth', authRoutes);
+app.use('/api', sessionRoutes);
 
 module.exports = app;
