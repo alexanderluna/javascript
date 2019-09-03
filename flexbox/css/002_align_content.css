@@ -1,0 +1,41 @@
+.flex-end {
+    justify-content: flex-end;
+}
+
+.center {
+    justify-content: center;
+}
+
+.reverse {
+    flex-flow: row-reverse;
+}
+
+.wrap {
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.items-start {
+    align-items: flex-start;
+}
+
+.flex-item-strech {
+    align-self: stretch;
+}
+
+.flex-item-center {
+    align-self: center;
+}
+
+.flex-item-end {
+    align-self: flex-end;
+}
+
+.odd-one {
+    order: -1;
+    border: 5px solid purple;
+}
