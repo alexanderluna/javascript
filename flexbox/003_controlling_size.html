@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>002 Align Content</title>
+    <link rel="stylesheet" href="/css/000_basic.css">
+    <link rel="stylesheet" href="/css/003_controlling_size.css">
+</head>
+
+<body>
+    <article>
+        <h2>flex-grow: 1 items</h2>
+        <div class="flex-container">
+            <div class="flex-item">
+                <h3>one</h3>
+            </div>
+            <div class="flex-item">
+                <h3>two two two</h3>
+            </div>
+            <div class="flex-item">
+                <h3>three</h3>
+            </div>
+        </div>
+    </article>
+
+    <article>
+        <h2>flex-grow: individual items</h2>
+        <div class="flex-container">
+            <div class="flex-item">
+                <h3>one</h3>
+            </div>
+            <div class="flex-item">
+                <h3>two two two</h3>
+            </div>
+            <div class="flex-item flex-grow-2">
+                <h3>three</h3>
+            </div>
+        </div>
+    </article>
+
+    <article>
+        <h2>flex-shrink: items</h2>
+        <div class="flex-container flex-wrap">
+            <div class="flex-item flex-shrink-none">
+                <h3>one</h3>
+            </div>
+            <div class="flex-item flex-shrink-none">
+                <h3>two two two</h3>
+            </div>
+            <div class="flex-item flex-shrink-none">
+                <h3>three</h3>
+            </div>
+        </div>
+    </article>
+
+    <article>
+        <h2>flex: items</h2>
+        <div class="flex-container">
+            <div class="flex-item flex">
+                <h3>one</h3>
+            </div>
+            <div class="flex-item flex">
+                <h3>two two two</h3>
+            </div>
+            <div class="flex-item flex">
+                <h3>three</h3>
+            </div>
+        </div>
+    </article>
+</body>
+
+</html>
