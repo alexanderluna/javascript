@@ -1,0 +1,145 @@
+body,
+button,
+input,
+textarea {
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+body {
+    background-color: #EDEDED;
+    margin: 0;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+header,
+footer {
+    /* background-color: green; */
+    background-color: rgba(0, 0, 0, 0.801);
+    height: 100px;
+}
+
+.sidebar-right {
+    background-color: blue;
+    color: indianred;
+}
+
+h1 {
+    color: salmon;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+@media screen and (min-width: 1120px) {
+    .content-area {
+        display: flex;
+    }
+
+    .sidebar-right {
+        flex: 0 0 320px;
+    }
+}
+
+.site-header {
+    height: 400px;
+    display: flex;
+    flex-flow: column;
+}
+
+.site-info {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 2em;
+    font-weight: 300;
+    text-align: center;
+    color: whitesmoke;
+    text-transform: uppercase;
+}
+
+.site-description {
+    text-align: center;
+    color: indianred;
+    font-size: 1.2em;
+    margin-top: -.8;
+    font-style: italic;
+}
+
+.main-menu {
+    padding: 1em;
+    background-color: indianred;
+    color: whitesmoke;
+}
+
+@media screen and (min-width: 1120px) {
+    .site-title {
+        font-size: 4em;
+    }
+}
+
+.main-content-area {
+    padding: 2em;
+}
+
+.post {
+    background-color: white;
+    margin-bottom: 1em;
+}
+
+.post a {
+    color: black;
+    text-decoration: none;
+}
+
+.post-content {
+    padding: 0 40px 20px;
+}
+
+.post-content h2 {
+    color: whitesmoke;
+    background-color: indianred;
+    padding: 20px;
+    text-align: center;
+    margin: 0 -40px 30px;
+}
+
+@media screen and (min-width: 810px) {
+    .posts {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .post {
+        flex-basis: 49%;
+    }
+}
+
+@media screen and (min-width: 1120px) {
+    .post-one-third {
+        flex-basis: 32%;
+    }
+
+    .post-half {
+        flex-basis: 49%;
+    }
+
+    .post-full {
+        flex-basis: 100%;
+    }
+}
