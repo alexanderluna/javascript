@@ -1,3 +1,7 @@
+/**************************************
+    basic styling
+**************************************/
+
 body,
 button,
 input,
@@ -21,7 +25,6 @@ img {
 
 header,
 footer {
-    /* background-color: green; */
     background-color: rgba(0, 0, 0, 0.801);
     height: 100px;
 }
@@ -49,6 +52,10 @@ p {
         flex: 0 0 320px;
     }
 }
+
+/**************************************
+    header styling
+**************************************/
 
 .site-header {
     height: 400px;
@@ -91,6 +98,10 @@ p {
         font-size: 4em;
     }
 }
+
+/**************************************
+    main content styling
+**************************************/
 
 .main-content-area {
     padding: 2em;
@@ -142,4 +153,48 @@ p {
     .post-full {
         flex-basis: 100%;
     }
+}
+
+/**************************************
+    watch section styling
+**************************************/
+
+.section-header {
+    color: black;
+    font-size: 3em;
+    text-align: center;
+}
+
+.watch-card {
+    margin-bottom: 1em;
+}
+
+.watch-content {
+    background: black;
+    color: white;
+    padding: 3em;
+}
+
+.watch-content h2 {
+    font-size: 2em;
+    font-weight: 300;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.movie-info {
+    font-weight: bold;
+}
+
+.movie-info span {
+    padding-right: 1.5em;
+}
+
+.movie-story {
+    margin: 1em 0;
+}
+
+.watch-content a {
+    color: white;
+    font-weight: bold;
 }
