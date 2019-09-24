@@ -198,3 +198,19 @@ p {
     color: white;
     font-weight: bold;
 }
+
+@media screen and (min-width: 810px) {
+    .watch-card {
+        display: flex;
+    }
+
+    .watch-content {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+    }
+
+    .img-right {
+        order: 2;
+    }
+}
