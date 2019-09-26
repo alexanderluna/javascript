@@ -1,14 +1,25 @@
-import React from 'react'
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-const Header = () => (
+const Header = (props) => (
   <div className="navigation">
-    <h1>Emaily</h1>
+    <Link to={props.auth ? '/surveys' : '/'} >
+      Emaily
+    </Link>
     <ul>
       <li>
-        <a href="/dummy">Login with Google</a>
+        {!props.auth && <a href="/auth/google">Login with Google</a>}
+        {props.auth && <a href="/api/logout">Logout</a>}
+      </li>
+      <li>
       </li>
     </ul>
   </div>
 )
 
-export default Header;
+const mapStateToProps = ({ auth }) => (
+  { auth }
+)
+
+export default connect(mapStateToProps)(Header);
