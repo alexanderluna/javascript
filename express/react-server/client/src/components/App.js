@@ -4,13 +4,12 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import './App.css';
 import Header from './Header';
+import Landing from './Landing';
 
 const Dashboard = () => (<h2>Dashboard</h2>);
 const SurveyNew = () => (<h2>SurveyNew</h2>);
-const Landing = () => (<h2>Landing</h2>);
 
 const App = (props) => {
-
   useEffect(() => {
     props.fetchUser();
   });
