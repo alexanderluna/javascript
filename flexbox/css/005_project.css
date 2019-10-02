@@ -214,3 +214,105 @@ p {
         order: 2;
     }
 }
+
+/**************************************
+    download section styling
+**************************************/
+
+.download-card {
+    margin-bottom: 1em;
+}
+
+.download-content {
+    background-color: white;
+}
+
+.download-content a {
+    border-radius: 0.2em;
+    background-color: black;
+    color: white;
+    padding: 1em 2em;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.download-content a i {
+    font-size: 2.5em;
+}
+
+.download-info {
+    padding: 1em 2em;
+}
+
+.download-info h4 {
+    margin: 0;
+}
+
+.download-info p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.download-cast img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 0.1em solid indianred;
+}
+
+.download-rating {
+    background-color: gold;
+    padding: 1em 2em;
+    color: black;
+    font-size: 0.9em;
+}
+
+.download-rating .rate {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: -0.25em;
+}
+
+.download-content {
+    display: flex;
+    flex-flow: column;
+}
+
+.download-content a,
+.download-rating {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.download-genre,
+.download-cast {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.download-info h4 {
+    flex-basis: 20%;
+}
+
+.download-genre {
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width: 810px) {
+    .download-content {
+        display: flex;
+        flex-flow: row;
+    }
+
+    .download-content a,
+    .download-rating {
+        flex-grow: 1;
+    }
+
+    .download-info {
+        flex-grow: 2;
+    }
+}
