@@ -316,3 +316,44 @@ p {
         flex-grow: 2;
     }
 }
+
+/**************************************
+    gallery section styling
+**************************************/
+
+.gallery-imgs {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -8px;
+}
+
+.gallery-img {
+    height: 250px;
+    flex-grow: 1;
+    margin: 0 0 8px 8px;
+}
+
+.gallery-img img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-img:nth-child(4n+1) {
+    flex-basis: 250px;
+    /* border: 5px solid red; */
+}
+
+.gallery-img:nth-child(4n+2) {
+    flex-basis: 325px;
+    /* border: 5px solid blue; */
+}
+
+.gallery-img:nth-child(4n+3) {
+    flex-basis: 180px;
+    /* border: 5px solid gold; */
+}
+
+.gallery-img:nth-child(4n+4) {
+    flex-basis: 380px;
+    /* border: 5px solid blueviolet; */
+}
