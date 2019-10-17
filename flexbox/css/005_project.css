@@ -23,10 +23,17 @@ img {
     height: auto;
 }
 
-header,
+header {
+    background-color: rgba(0, 0, 0, 0.801);
+}
+
 footer {
     background-color: rgba(0, 0, 0, 0.801);
-    height: 100px;
+    color: whitesmoke;
+    text-align: center;
+    padding: 1.5em;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 .sidebar-right {
@@ -88,7 +95,6 @@ p {
 }
 
 .main-menu {
-    padding: 1em;
     background-color: indianred;
     color: whitesmoke;
 }
@@ -399,5 +405,43 @@ p {
 
     .widget {
         flex-basis: 48.8%;
+    }
+}
+
+/**************************************
+    sidebar section styling
+**************************************/
+
+.main-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-menu li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: .6em 1em;
+    display: block;
+    transition: all .1s ease;
+}
+
+.main-menu li a:hover {
+    background-color: black;
+    color: indianred;
+}
+
+@media screen and (min-width: 810px) {
+    .main-menu ul {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .main-menu li {
+        flex: 1 0 auto;
     }
 }
