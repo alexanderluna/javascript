@@ -8,7 +8,8 @@ class App extends React.Component {
 
     state = {
         videos: [],
-        selectedVideo: null
+        selectedVideo: null,
+        error: null
     };
 
     componentDidMount = () => {
@@ -16,11 +17,16 @@ class App extends React.Component {
     }
 
     onFormSubmit = async (term) => {
-        const response = await youtube.get('/search', { params: { q: term } });
-        this.setState({
-            videos: response.data.items,
-            selectedVideo: response.data.items[0]
-        });
+        try {
+            const res = await youtube.get('/search', { params: { q: term } });
+            this.setState({
+                videos: res.data.items,
+                selectedVideo: res.data.items[0],
+                errorMessage: null
+            });
+        } catch ({ message }) {
+            this.setState({ errorMessage: message });
+        }
     }
 
     onVideoSelect = (video) => {
@@ -29,7 +35,7 @@ class App extends React.Component {
     }
 
     render() {
-        const { videos, selectedVideo } = this.state;
+        const { videos, selectedVideo, errorMessage } = this.state;
         return (
             <div className="ui container">
                 <SearchBar onFormSubmit={this.onFormSubmit} />
@@ -39,6 +45,10 @@ class App extends React.Component {
                             {
                                 selectedVideo
                                 && <VideoDetail video={selectedVideo} />
+                            }
+                            {
+                                errorMessage
+                                && <h2>{errorMessage}</h2>
                             }
                         </div>
                         <div className="five wide column">
