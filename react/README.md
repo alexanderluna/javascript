@@ -6,12 +6,11 @@
 4. [Component Lifecycle](basics/index_4.html)
 5. [Build Note Board (react-create)](bulletin-board/src/index.js)
 6. [Building using Babel and Webpack](building-with-webpack/README.md)
-7. [Geolocation and State](seasons/README.md)
-8. [Check your Season using geolocation](seasons)
-9. [Unsplash API image searcher & viewer](pictures)
-10. [Youtube copy](youtube-videos)
-11. [First Steps with Redux to manage Song list](songs-redux)
-12. [Livestream app with Node](client)
+7. [Geolocation and State](seasons)
+8. [Unsplash API image searcher & viewer](pictures)
+9. [Youtube copy](youtube-videos)
+10. [First Steps with Redux to manage Song list](songs-redux)
+11. [Livestream app with Node](rtmpclient)
 
 ## Related Repositories
 
