@@ -1,7 +1,14 @@
 body {
     margin: 0;
     padding: 0;
+    color: lavender;
     background: linear-gradient(to left,
             indigo 0%,
             darkred 100%);
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Homemade Apple', cursive;
+    font-size: 3em;
 }
