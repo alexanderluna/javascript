@@ -1,22 +1,36 @@
 import React, { useEffect, useState } from 'react';
+import SearchBar from "./components/Search/SearchBar";
 import CardList from "./components/Card/CardList";
 import './App.css';
 
-function App() {
+const App = () => {
   const [users, setUsers] = useState([]);
+  const [searchValue, setSearchValue] = useState('');
 
   useEffect(() => {
-    const fetchUsers = async () => {
+    (async () => {
       const data = await fetch('https://jsonplaceholder.typicode.com/users');
       const users = await data.json();
       setUsers(users);
-    };
-    fetchUsers();
+    })();
   }, []);
+
+  const handleSearchInput = (event) => {
+    setSearchValue(event.target.value.toLowerCase());
+  }
+
+  const filteredUsersOnSearch = users.filter(user => (
+    user.name.toLowerCase().includes(searchValue)
+  ))
 
   return (
     <div className="App">
-      <CardList users={users} />
+      <h1>Addressbuch</h1>
+      <SearchBar
+        handleSearchInput={handleSearchInput}
+        searchValue={searchValue}
+      />
+      <CardList users={filteredUsersOnSearch} />
     </div>
   );
 }
