@@ -1,0 +1,18 @@
+.flex-item {
+    display: flex;
+    flex: 0 0 15%;
+    flex-direction: column;
+    color: lavender;
+    background-color: rgba(100, 148, 237, 0.35);
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 15px 0;
+    cursor: pointer;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+}
+
+.flex-item:hover {
+    transform: scale(1.05);
+}
