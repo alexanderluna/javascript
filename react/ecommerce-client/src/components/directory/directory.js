@@ -4,11 +4,36 @@ import './directory.sass';
 
 const Directory = () => {
   const [sections] = useState([
-    { title: 'title1', imgUrl: 'https://via.placeholder.com/150', id: 1 },
-    { title: 'title2', imgUrl: 'https://via.placeholder.com/150', id: 2 },
-    { title: 'title3', imgUrl: 'https://via.placeholder.com/150', id: 3 },
-    { title: 'title4', imgUrl: 'https://via.placeholder.com/150', id: 4 },
-    { title: 'title5', imgUrl: 'https://via.placeholder.com/150', id: 5 },
+    {
+      title: 'title1',
+      imgUrl: 'https://via.placeholder.com/150',
+      id: 1,
+      link: 'title1',
+    },
+    {
+      title: 'title2',
+      imgUrl: 'https://via.placeholder.com/150',
+      id: 2,
+      link: 'title2',
+    },
+    {
+      title: 'title3',
+      imgUrl: 'https://via.placeholder.com/150',
+      id: 3,
+      link: 'title3',
+    },
+    {
+      title: 'title4',
+      imgUrl: 'https://via.placeholder.com/150',
+      id: 4,
+      link: 'title4',
+    },
+    {
+      title: 'title5',
+      imgUrl: 'https://via.placeholder.com/150',
+      id: 5,
+      link: 'title5',
+    },
   ]);
 
   return (
@@ -16,8 +41,7 @@ const Directory = () => {
       {sections.map((section) => (
         <MenuItem
           key={section.id}
-          title={section.title}
-          imgUrl={section.imgUrl}
+          {...section}
         />
       ))}
     </div>
