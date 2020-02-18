@@ -13,11 +13,15 @@ const Directory = () => {
 
   return (
     <div className="directory-menu">
-      {sections.map(section => (
-        <MenuItem key={section.id} {...section} />
+      {sections.map((section) => (
+        <MenuItem
+          key={section.id}
+          title={section.title}
+          imgUrl={section.imgUrl}
+        />
       ))}
     </div>
-  )
-}
+  );
+};
 
 export default Directory;
