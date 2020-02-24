@@ -1,0 +1,35 @@
+$sub-color: grey
+$main-color: black
+
+.sign-in
+    width: 30vw
+    display: flex
+    flex-direction: column
+
+form
+    position: relative
+    margin: 30px 0
+
+    input
+        background: none
+        background-color: white
+        color: $sub-color
+        font-size: 18px
+        padding: 10px 10px 10px 5px
+        display: block
+        width: 100%
+        border: none
+        border-radius: 0
+        border-bottom: 1px solid black
+        margin: 10px 0
+
+        &:focus
+            outline: none
+            color: $main-color
+
+    input[type='password']
+        letter-spacing: 0.3em
+
+    label
+        font-size: 16px
+        font-weight: normal
