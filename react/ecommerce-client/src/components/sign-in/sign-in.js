@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../button/button';
+import { signInWithGoogle } from '../../firebase'
 import './sign-in.sass';
 
 const SignIn = () => {
@@ -44,6 +45,9 @@ const SignIn = () => {
         </label>
         <Button type="submit" value="submit">
           Sign in
+        </Button>
+        <Button type="button" onClick={signInWithGoogle}>
+          Sign in with Google
         </Button>
       </form>
     </div>
