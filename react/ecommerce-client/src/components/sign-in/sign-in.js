@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../button/button';
-import { signInWithGoogle } from '../../firebase'
+import { signInWithGoogle } from '../../firebase';
 import './sign-in.sass';
 
 const SignIn = () => {
@@ -19,7 +19,6 @@ const SignIn = () => {
   return (
     <div className="sign-in">
       <h2>Sign in</h2>
-      <span>sign in with your email</span>
       <form action="#" onSubmit={handleSubmit}>
         <label htmlFor="sign-in-email">
           Email
