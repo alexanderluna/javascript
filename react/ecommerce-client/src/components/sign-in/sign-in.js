@@ -42,12 +42,14 @@ const SignIn = () => {
             required
           />
         </label>
-        <Button type="submit" value="submit">
-          Sign in
-        </Button>
-        <Button type="button" onClick={signInWithGoogle}>
-          Sign in with Google
-        </Button>
+        <div className="buttons">
+          <Button type="submit" value="submit">
+            Sign in
+          </Button>
+          <Button type="button" onClick={signInWithGoogle} secondary>
+            Sign in with Google
+          </Button>
+        </div>
       </form>
     </div>
   );
