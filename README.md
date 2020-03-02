@@ -41,7 +41,7 @@ this language:
 - Express, Koa
 - React Native
 - Electron
-- D3, three js, babylon, phaser
+- D3, phaser
 - Jest testing
 
 ## Resources I used to learn

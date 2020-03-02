@@ -1,16 +1,15 @@
 # React
 
-1. [Getting started (hello world)](basics/index_1.html)
-2. [Handling States](basics/index_3.html)
-3. [Handling Events (build note board)](basics/index_2.html)
-4. [Component Lifecycle](basics/index_4.html)
-5. [Build Note Board (react-create)](bulletin-board/src/index.js)
-6. [Building using Babel and Webpack](building-with-webpack/README.md)
-7. [Geolocation and State](seasons)
-8. [Unsplash API image searcher & viewer](pictures)
-9. [Youtube copy](youtube-videos)
-10. [First Steps with Redux to manage Song list](songs-redux)
-11. [Livestream app with Node](rtmpclient)
+| Project                              | Description                          |
+| ------------------------------------ | ------------------------------------ |
+| [address book](address-book)         | Addressbook with placeholder API     |
+| [blog](blog)                         | basic blogging app                   |
+| [seasons](seasons)                   | Geolocation and State                |
+| [pictures](pictures)                 | Unsplash API image searcher & viewer |
+| [youtube-videos](youtube-videos)     | Youtube clone                        |
+| [songs-redux](songs-redux)           | Use Redux to manage Song list        |
+| [rtmpclient](rtmpclient)             | [Livestream app with Node            |
+| [ecommerce-client](ecommerce-client) | Ecommerce with stripe and firebase   |
 
 ## Related Repositories
 
