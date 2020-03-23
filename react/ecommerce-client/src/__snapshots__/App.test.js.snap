@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component renders app component 1`] = `
+"<div>
+  <Header currentUser={{...}} />
+  <Switch>
+    <Route exact={true} path=\\"/\\" component={[Function: Homepage]} />
+    <Route path=\\"/shop\\" component={[Function: Shop]} />
+    <Route path=\\"/signin\\" component={[Function: Authentication]} />
+  </Switch>
+</div>"
+`;
