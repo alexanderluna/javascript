@@ -10,3 +10,4 @@
 | mern_stack           | mongodb, express, react and node combined                                      |
 | guestbook-project    | app to which users can add themselves + views rendered with EJS templates      |
 | restaurant           | fullstack app, views rendered with EJS, weather API, Geolocation fetching      |
+| zoom video streaming | fullstack app with sockets to stream video across users                        |
