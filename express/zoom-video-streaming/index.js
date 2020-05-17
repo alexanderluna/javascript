@@ -1,19 +1,37 @@
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
 const express = require('express');
+const { static, urlencoded } = require('express');
 const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
-const { v4: uuid } = require('uuid');
+const passport = require('passport');
+const flash = require('express-flash');
+const session = require('express-session');
+const methodOverride = require('method-override');
+
+const base = require('./routes/base');
+const authentication = require('./routes/authentication');
+const room = require('./routes/room');
 
 app.set('view engine', 'ejs');
-app.use(express.static('public'));
+app.use(static('public'));
+app.use(urlencoded({ extended: false }));
+app.use(flash());
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(methodOverride('_method'));
 
-app.get('/', (req, res) => {
-  res.redirect(`/${uuid()}`);
-});
-
-app.get('/:room', (req, res) => {
-  res.render('room', { roomId: req.params.room });
-});
+app.use('/', base);
+app.use('/auth', authentication);
+app.use('/room', room);
 
 io.on('connection', (socket) => {
   socket.on('join-room', (roomId, userId) => {
