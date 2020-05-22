@@ -1,0 +1,42 @@
+GET http://localhost:3000/
+
+###
+
+GET http://localhost:3000/auth/login
+
+###
+
+GET http://localhost:3000/auth/register
+
+###
+
+GET http://localhost:3000/user
+
+###
+
+GET http://localhost:3000/user/5f582a2caa00b6f2860317b6
+
+###
+
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+  "name": "alexander",
+  "email": "alexander@gmail.com",
+  "password": "alexanderspassword" 
+}
+
+###
+
+DELETE http://localhost:3000/user/5f5822596694e1efe15c6974
+
+###
+
+PATCH http://localhost:3000/user/5f582a2caa00b6f2860317b6
+Content-Type: application/json
+
+{
+  "name": "alexander luna"
+}
+

@@ -3,7 +3,6 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const express = require('express');
-const { static, urlencoded } = require('express');
 const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
@@ -11,14 +10,16 @@ const passport = require('passport');
 const flash = require('express-flash');
 const session = require('express-session');
 const methodOverride = require('method-override');
+const mongoose = require('mongoose');
 
 const base = require('./routes/base');
 const authentication = require('./routes/authentication');
 const room = require('./routes/room');
+const user = require('./routes/user');
 
 app.set('view engine', 'ejs');
-app.use(static('public'));
-app.use(urlencoded({ extended: false }));
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: false }));
 app.use(flash());
 app.use(session({
   secret: process.env.SESSION_SECRET,
@@ -28,10 +29,20 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(methodOverride('_method'));
+app.use(express.json())
 
 app.use('/', base);
 app.use('/auth', authentication);
 app.use('/room', room);
+app.use('/user', user);
+
+mongoose.connect(process.env.DATABASE_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+const db = mongoose.connection;
+db.on('error', (error) => console.log(error));
+db.once('open', () => console.log('🚀 Connected to Database'));
 
 io.on('connection', (socket) => {
   socket.on('join-room', (roomId, userId) => {
