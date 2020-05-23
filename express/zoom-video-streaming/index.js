@@ -10,7 +10,6 @@ const passport = require('passport');
 const flash = require('express-flash');
 const session = require('express-session');
 const methodOverride = require('method-override');
-const mongoose = require('mongoose');
 
 const base = require('./routes/base');
 const authentication = require('./routes/authentication');
@@ -35,14 +34,6 @@ app.use('/', base);
 app.use('/auth', authentication);
 app.use('/room', room);
 app.use('/user', user);
-
-mongoose.connect(process.env.DATABASE_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-const db = mongoose.connection;
-db.on('error', (error) => console.log(error));
-db.once('open', () => console.log('🚀 Connected to Database'));
 
 io.on('connection', (socket) => {
   socket.on('join-room', (roomId, userId) => {

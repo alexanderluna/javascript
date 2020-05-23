@@ -1,34 +1,56 @@
 const express = require('express');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 const router = express.Router();
-const User = require('../models/user');
+const { PrismaClient } = require('@prisma/client')
+
+const prisma = new PrismaClient()
+
+
+router.post('/login', getUserByEmail, async (req, res) => {
+  try {
+    const { user } = res;
+    if (await bcrypt.compare(req.body.password, user.password)) {
+      const accessToken = jwt.sign({ userId: user.id }, process.env.ACCESS_TOKEN_SECRET);
+      return res.json({ accessToken });
+    }
+    throw new Error('Wrong password');
+  } catch ({ message }) {
+    res.status(400).json({ message });
+  }
+});
+
+
+router.post('/register', async (req, res) => {
+  try {
+    const { name, email, password } = req.body;
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const user = await prisma.user.create({
+      data: { name, email, password: hashedPassword }
+    });
+    res.status(201).json(user);
+  } catch ({ message }) {
+    res.status(400).json({ message });
+  }
+});
+
 
 router.get('/', async (req, res) => {
   try {
-    const users = await User.find();
+    const users = await prisma.user.findMany();
     res.json(users);
   } catch ({ message }) {
     res.status(500).json({ message });
   }
 });
 
-router.get('/:id', getUser, (req, res) => {
+
+router.get('/:id', authenticateToken, (req, res) => {
   res.json(res.user);
 });
 
-router.post('/', async (req, res) => {
-  const { name, email, password } = req.body;
 
-  const user = new User({ name, email, password });
-
-  try {
-    const newUser = await user.save();
-    res.status(201).json(newUser);
-  } catch ({ message }) {
-    res.status(400).json({ message });
-  }
-});
-
-router.patch('/:id', getUser, async (req, res) => {
+router.patch('/:id', authenticateToken, async (req, res) => {
   if (req.body.name != null) {
     res.user.name = req.body.name;
   }
@@ -47,7 +69,8 @@ router.patch('/:id', getUser, async (req, res) => {
   }
 });
 
-router.delete('/:id', getUser, async (req, res) => {
+
+router.delete('/:id', authenticateToken, async (req, res) => {
   try {
     await res.user.remove();
     res.json({ message: 'Deleted User' });
@@ -56,18 +79,34 @@ router.delete('/:id', getUser, async (req, res) => {
   }
 });
 
-async function getUser(req, res, next) {
+
+async function authenticateToken(req, res, next) {
+  try {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+    if (!token) throw new Error('Missing authorization token');
+    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (error, user) => {
+      if (error) throw new Error(error.message);
+      res.user = user;
+      next();
+    });
+  } catch ({ message }) {
+    return res.json({ message });
+  }
+};
+
+
+async function getUserByEmail(req, res, next) {
   let user;
   try {
-    user = await User.findById(req.params.id);
-    if (user == null) {
-      return res.status(404).json({ message: 'Cannot find user' })
-    }
+    user = await User.findOne({ email: req.body.email });
+    if (!user) throw new Error('Email not found');
   } catch ({ message }) {
-    return res.status(500).json({ message });
+    return res.json({ message });
   }
   res.user = user;
   next();
 };
+
 
 module.exports = router;

@@ -1,24 +1,4 @@
-GET http://localhost:3000/
-
-###
-
-GET http://localhost:3000/auth/login
-
-###
-
-GET http://localhost:3000/auth/register
-
-###
-
-GET http://localhost:3000/user
-
-###
-
-GET http://localhost:3000/user/5f582a2caa00b6f2860317b6
-
-###
-
-POST http://localhost:3000/user
+POST http://localhost:3000/user/register
 Content-Type: application/json
 
 {
@@ -29,11 +9,30 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3000/user/5f5822596694e1efe15c6974
+POST http://localhost:3000/user/login
+Content-Type: application/json
+
+{
+  "email": "alexander@gmail.com",
+  "password": "alexanderspassword" 
+}
 
 ###
 
-PATCH http://localhost:3000/user/5f582a2caa00b6f2860317b6
+GET http://localhost:3000/user
+
+###
+
+GET http://localhost:3000/user/5f593f811a031c22c3d31377
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVmNTkzZjgxMWEwMzFjMjJjM2QzMTM3NyIsIm5hbWUiOiJhbGV4YW5kZXIiLCJlbWFpbCI6ImFsZXhhbmRlckBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRUVHdNRlVSR21MR2Z5SFZTbUpZcy5lNjcwaERyeFppZkJuMXM5dDBwdjA4aGs3OVJYTm1VVyIsImNyZWF0ZWRBdCI6IjIwMjAtMDktMDlUMjA6NDg6MDEuNzA2WiIsIl9fdiI6MH0sImlhdCI6MTU5OTc0NTM3MX0.hBkU5ZtCGdQrE8yIIthgSglhHCcbca38Jub-pU_WZLU
+
+###
+
+DELETE http://localhost:3000/user/5f593f811a031c22c3d31377
+
+###
+
+PATCH http://localhost:3000/user/5f593f811a031c22c3d31377
 Content-Type: application/json
 
 {
