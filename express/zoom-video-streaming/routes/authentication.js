@@ -4,7 +4,6 @@ const passport = require('passport');
 const initializePassport = require('../passport-config');
 const router = express.Router();
 const { isAlreadyAuthenticated } = require('../helper');
-const User = require('../models/user');
 
 
 initializePassport(

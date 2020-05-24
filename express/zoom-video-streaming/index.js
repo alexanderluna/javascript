@@ -13,6 +13,7 @@ const methodOverride = require('method-override');
 
 const base = require('./routes/base');
 const authentication = require('./routes/authentication');
+const auth = require('./routes/auth');
 const room = require('./routes/room');
 const user = require('./routes/user');
 
@@ -31,7 +32,8 @@ app.use(methodOverride('_method'));
 app.use(express.json())
 
 app.use('/', base);
-app.use('/auth', authentication);
+app.use('/authentication', authentication);
+app.use('/auth', auth);
 app.use('/room', room);
 app.use('/user', user);
 
