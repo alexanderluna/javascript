@@ -1,21 +1,34 @@
-POST http://localhost:3000/user/register
+POST http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-  "name": "alexander",
-  "email": "alexander@gmail.com",
+  "name": "sascha",
+  "email": "sascha@gmail.com",
   "password": "alexanderspassword" 
 }
 
 ###
 
-POST http://localhost:3000/user/login
+POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-  "email": "alexander@gmail.com",
+  "email": "sascha@gmail.com",
   "password": "alexanderspassword" 
 }
+
+###
+POST http://localhost:3000/auth/token
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoyLCJpYXQiOjE1OTk4NjA4ODJ9.SpYHRJiK8ZIIG1cRifldoB_C1BqJvfDzaXwb4zJnYyM"
+}
+
+###
+
+DELETE http://localhost:3000/auth/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoyLCJpYXQiOjE1OTk4NjEyMDEsImV4cCI6MTU5OTg2MjEwMX0.JpNheQ_OBQIqSiJZ6Rlco-QNB_PFBdA90dTyS5FCpgA
 
 ###
 
@@ -23,19 +36,23 @@ GET http://localhost:3000/user
 
 ###
 
-GET http://localhost:3000/user/5f593f811a031c22c3d31377
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVmNTkzZjgxMWEwMzFjMjJjM2QzMTM3NyIsIm5hbWUiOiJhbGV4YW5kZXIiLCJlbWFpbCI6ImFsZXhhbmRlckBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRUVHdNRlVSR21MR2Z5SFZTbUpZcy5lNjcwaERyeFppZkJuMXM5dDBwdjA4aGs3OVJYTm1VVyIsImNyZWF0ZWRBdCI6IjIwMjAtMDktMDlUMjA6NDg6MDEuNzA2WiIsIl9fdiI6MH0sImlhdCI6MTU5OTc0NTM3MX0.hBkU5ZtCGdQrE8yIIthgSglhHCcbca38Jub-pU_WZLU
+GET http://localhost:3000/user/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXIiOjIsImlhdCI6MTU5OTg1NjI4OX0sImlhdCI6MTU5OTg1ODYwOSwiZXhwIjoxNTk5ODU4NjM5fQ.hbJ2QPBehmmzCZKPdi5-JmQVigfc1CawRq51KWwYE14
 
 ###
 
-DELETE http://localhost:3000/user/5f593f811a031c22c3d31377
+DELETE http://localhost:3000/user/1
 
 ###
 
-PATCH http://localhost:3000/user/5f593f811a031c22c3d31377
+PATCH http://localhost:3000/user/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNTk5NzgzNDIyfQ.I6cVp58EXeicksoA8rQzcsUs3LICIzNN9N3ZMWnSkNY
 Content-Type: application/json
 
 {
-  "name": "alexander luna"
+  "id": 3,
+  "name": "alexander luna",
+  "email": "sascha@gmail.com",
+  "password": "alexanderspassword"
 }
 

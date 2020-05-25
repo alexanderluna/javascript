@@ -1,0 +1,45 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  email     String   @unique
+  password  String
+  name      String?
+  role      Role     @default(USER)
+  posts     Room[]
+  token     Token[]
+}
+
+model Room {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  published Boolean  @default(false)
+  title     String
+  owner     User?    @relation(fields: [ownerId], references: [id])
+  ownerId   Int?
+}
+
+model Token {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  value     String
+  ipAddress String?
+  userAgent String?
+  owner     User?    @relation(fields: [ownerId], references: [id])
+  ownerId   Int?
+}
+
+enum Role {
+  USER
+  ADMIN
+}

@@ -1,0 +1,6 @@
+# Prisma Migrate lockfile v1
+
+20200910212937-create-db
+20200910214655-add-password-field
+20200911190717-user-has-many-tokens
+20200911200242-improve-token
