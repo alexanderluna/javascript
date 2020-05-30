@@ -1,14 +1,19 @@
 import { compare, hash } from 'bcryptjs';
-import { Arg, Ctx, Field, Mutation, ObjectType, Query, Resolver, UseMiddleware } from 'type-graphql';
+import { Arg, Ctx, Field, Int, Mutation, ObjectType, Query, Resolver, UseMiddleware } from 'type-graphql';
 import { createAccessToken, createRefreshToken } from './helper/userHelper';
 import { Context } from './Context';
 import { User } from './entity/User';
 import { isAuthenticated } from './middleware/isAuthenticated';
+import { sendRefreshToken } from './helper/indexHelper';
+import { getConnection } from 'typeorm';
 
 @ObjectType()
 class LoginResponse {
   @Field()
   accessToken: string;
+
+  @Field()
+  error: string;
 }
 
 @Resolver()
@@ -24,21 +29,32 @@ export class UserResolver {
     return User.find();
   }
 
+  @Mutation(() => Boolean)
+  async revokeRefreshTokenForUser(@Arg('userId', () => Int) id: number) {
+    await getConnection()
+      .getRepository(User)
+      .increment({ id }, 'tokenVersion', 1);
+    return true;
+  }
+
   @Mutation(() => LoginResponse)
   async login(
     @Arg('email') email: string,
     @Arg('password') password: string,
     @Ctx() { res }: Context
   ): Promise<LoginResponse> {
-    const user = await User.findOne({ where: { email } });
-    if (!user) throw new Error('User not found');
+    try {
+      const user = await User.findOne({ where: { email } });
+      if (!user) throw new Error('User not found');
 
-    const valid = await compare(password, user.password);
-    if (!valid) throw new Error('Wrong password');
+      const valid = await compare(password, user.password);
+      if (!valid) throw new Error('Wrong password');
 
-    res.cookie('gqid', createRefreshToken(user), { httpOnly: true });
-
-    return { accessToken: createAccessToken(user) };
+      sendRefreshToken(res, createRefreshToken(user))
+      return { accessToken: createAccessToken(user), error: '' };
+    } catch ({ message }) {
+      return { accessToken: '', error: message };
+    }
   }
 
   @Mutation(() => Boolean)

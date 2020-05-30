@@ -5,7 +5,7 @@
     "username": "alexander",
     "password": "",
     "database": "graphql-auth",
-    "synchronize": true,
+    "synchronize": false,
     "logging": false,
     "entities": [
         "src/entity/**/*.ts"
