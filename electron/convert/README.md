@@ -1,11 +1,15 @@
-### Getting started
+# Convert Video
 
-`npm install`
+Convert videos using FFMPEG
 
-Start React app:
+## Installation
 
-`yarn react`
+```bash
+yarn install
 
-Start Electron app:
+# Start React app:
+yarn react
 
-`yarn electron`
+# Start Electron app:
+yarn electron
+```

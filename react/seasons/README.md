@@ -24,8 +24,11 @@ to access their geographic location:
 
 After a User allowed geographic access, we show the user our result:
 
-![summer](./readme_imgs/summer.png)
-![winter](./readme_imgs/winter.png)
+<center>
+  <img src="./readme_imgs/summer.png" width="49%" />
+  <img src="./readme_imgs/winter.png" width="49%" />
+</center>
+
 
 ## User denies permission
 

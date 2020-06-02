@@ -156,10 +156,12 @@ of the `react-router`.
 
 ## Screenshots
 
-![loggedout](./readme_imgs/loggedout.png)
-![google](./readme_imgs/google.png)
-![loggedin](./readme_imgs/loggedin.png)
-![formvalidation](./readme_imgs/formvalidation.png)
-![streamprotection](./readme_imgs/streamprotection.png)
-![stream](./readme_imgs/stream.png)
-![delete](./readme_imgs/delete.png)
+<center>
+  <img src="./readme_imgs/loggedout.png" width="49%" />
+  <img src="./readme_imgs/google.png" width="49%" />
+  <img src="./readme_imgs/loggedin.png" width="49%" />
+  <img src="./readme_imgs/formvalidation.png" width="49%" />
+  <img src="./readme_imgs/streamprotection.png" width="49%" />
+  <img src="./readme_imgs/stream.png" width="49%" />
+  <img src="./readme_imgs/delete.png" width="49%" />
+</center>

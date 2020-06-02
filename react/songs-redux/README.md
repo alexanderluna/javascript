@@ -10,5 +10,7 @@ cd songs-redux
 yarn install && yarn start
 ```
 
-![select](./readme_imgs/select.png)
-![selected](./readme_imgs/selected.png)
+<center>
+  <img src="./readme_imgs/select.png" width="49%" />
+  <img src="./readme_imgs/selected.png" width="49%" />
+</center>
