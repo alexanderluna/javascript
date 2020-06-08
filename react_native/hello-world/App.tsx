@@ -1,15 +1,17 @@
 import 'react-native-gesture-handler';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
+import ComponentScreen from './src/screens/ComponentScreen';
 import HomeScreen from './src/screens/HomeScreen';
 
 const navigator = createStackNavigator(
   {
-    Home: HomeScreen
+    Home: HomeScreen,
+    Components: ComponentScreen,
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Components',
     defaultNavigationOptions: {
-      title: 'App'
+      title: 'Hello World'
     }
   }
 );

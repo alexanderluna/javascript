@@ -1,8 +1,10 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
 
-const HomeScreen = () => {
-  return <Text style={styles.text}>Homepage</Text>;
+const HomeScreen: React.FC = () => {
+  return (
+    <Text style={styles.text}>Homepage</Text>
+  );
 };
 
 const styles = StyleSheet.create({
