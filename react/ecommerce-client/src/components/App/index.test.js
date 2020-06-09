@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Switch, Route } from 'react-router-dom';
-import App from './App';
-import Header from './components/header/header';
+import App from '.';
+import Header from '../header/header';
 
 describe('App component', () => {
   let app;
@@ -13,10 +13,6 @@ describe('App component', () => {
 
   test('renders app component', () => {
     expect(app.debug()).toMatchSnapshot();
-  });
-
-  test('currentUser is set to null', () => {
-    expect(app.state()).toEqual({ currentUser: null });
   });
 
   test('renders all sub-components', () => {
