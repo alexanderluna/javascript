@@ -1,6 +1,6 @@
 import React from 'react';
-import SignIn from '../../components/sign-in/sign-in';
-import './authentication.sass';
+import SignIn from '../../components/SignIn';
+import './styles.sass';
 
 const Authentication = () => (
   <div className="authentication">

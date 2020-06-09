@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/beer.svg';
-import './header.sass';
+import './styles.sass';
 import { auth } from '../../firebase';
 
 const Header = ({ currentUser }) => (

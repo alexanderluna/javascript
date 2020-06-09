@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Button from '../button/button';
+import Button from '../Button';
 import { signInWithGoogle } from '../../firebase';
-import './sign-in.sass';
+import './styles.sass';
 
 const SignIn = () => {
   const [form, setForm] = useState({ email: '', password: '' });

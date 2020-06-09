@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Header from '../header/header';
-import Homepage from '../../pages/homepage/Homepage';
-import Shop from '../../pages/shop/shop';
-import Authentication from '../../pages/authentication/authentication';
+import Header from '../Header';
+import Homepage from '../../pages/Homepage';
+import Shop from '../../pages/Shop';
+import Authentication from '../../pages/Authentication';
 import { auth, createUserProfileDocument } from '../../firebase';
 import './styles.css';
 

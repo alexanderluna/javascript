@@ -1,6 +1,6 @@
 import React from 'react';
-import Directory from '../../components/directory/directory';
-import './Homepage.sass';
+import Directory from '../../components/Directory';
+import './styles.sass';
 
 const Homepage = () => (
   <div className="homepage">

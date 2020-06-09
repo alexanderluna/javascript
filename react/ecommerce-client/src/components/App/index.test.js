@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Switch, Route } from 'react-router-dom';
 import App from '.';
-import Header from '../header/header';
+import Header from '../Header';
 
 describe('App component', () => {
   let app;
