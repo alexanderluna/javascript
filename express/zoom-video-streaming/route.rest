@@ -2,9 +2,9 @@ POST http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-  "name": "sascha",
-  "email": "sascha@gmail.com",
-  "password": "alexanderspassword" 
+  "name": "alexander luna",
+  "email": "alexanderluna@gmail.com",
+  "password": "alexander" 
 }
 
 ###
@@ -13,8 +13,8 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-  "email": "sascha@gmail.com",
-  "password": "alexanderspassword" 
+  "email": "alexanderluna@gmail.com",
+  "password": "alexander" 
 }
 
 ###
@@ -22,7 +22,7 @@ POST http://localhost:3000/auth/token
 Content-Type: application/json
 
 {
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoyLCJpYXQiOjE1OTk4NjA4ODJ9.SpYHRJiK8ZIIG1cRifldoB_C1BqJvfDzaXwb4zJnYyM"
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNTk5OTIzODkwfQ.lYgPi3fteqLZjlYhvxJ5veAmsJYxQXaoTgI2B3BX_Xo"
 }
 
 ###
@@ -45,14 +45,14 @@ DELETE http://localhost:3000/user/1
 
 ###
 
-PATCH http://localhost:3000/user/2
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNTk5NzgzNDIyfQ.I6cVp58EXeicksoA8rQzcsUs3LICIzNN9N3ZMWnSkNY
+PATCH http://localhost:3000/user/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNTk5OTI1MTkyLCJleHAiOjE1OTk5MjYwOTJ9.VGTy6lrDKjblc2tifNAxWdiXuKGkyojsUESdslEDWLk
 Content-Type: application/json
 
 {
   "id": 3,
-  "name": "alexander luna",
-  "email": "sascha@gmail.com",
+  "name": "alexander",
+  "email": "alexanderlunaNEW@gmail.com",
   "password": "alexanderspassword"
 }
 

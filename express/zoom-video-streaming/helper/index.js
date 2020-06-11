@@ -22,7 +22,7 @@ const authenticateToken = async (req, res, next) => {
     const token = authHeader && authHeader.split(' ')[1];
     if (!token) throw new Error('Missing authorization token');
     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (error, user) => {
-      if (error) throw new Error(error.message);
+      if (error) throw new Error(`verify error: ${error.message}`);
       res.user = user;
       next();
     });
