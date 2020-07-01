@@ -1,8 +1,11 @@
 import React from 'react';
 import './button.sass';
 
-const Button = ({ children, ...props }) => (
-  <button className="custom-button" {...props}>
+const Button = ({ children, secondary, ...props }) => (
+  <button
+    className={`${secondary ? 'secondary' : 'primary'} custom-button`}
+    {...props}
+  >
     {children}
   </button>
 );
