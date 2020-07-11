@@ -7,27 +7,35 @@ import Authentication from './pages/authentication/authentication';
 import { auth } from './firebase';
 import './App.css';
 
-const App = () => {
-  const [currentUser, setCurrentUser] = useState(null);
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { currentUser: null };
+  }
 
-  useEffect(() => {
-    const unsubscribeFromAuth = auth.onAuthStateChanged((user) => {
-      setCurrentUser(user);
+  componentDidMount() {
+    auth.onAuthStateChanged((user) => {
+      this.setState({ currentUser: user });
     });
+  }
 
-    return () => unsubscribeFromAuth();
-  }, []);
+  componentWillUnmount() {
+    auth.unsubscribeFromAuth();
+  }
 
-  return (
-    <div>
-      <Header currentUser={currentUser} />
-      <Switch>
-        <Route exact path="/" component={Homepage} />
-        <Route path="/shop" component={Shop} />
-        <Route path="/signin" component={Authentication} />
-      </Switch>
-    </div>
-  );
-};
+  render() {
+    const { currentUser } = this.state;
+    return (
+      <div>
+        <Header currentUser={currentUser} />
+        <Switch>
+          <Route exact path="/" component={Homepage} />
+          <Route path="/shop" component={Shop} />
+          <Route path="/signin" component={Authentication} />
+        </Switch>
+      </div>
+    );
+  }
+}
 
 export default App;
