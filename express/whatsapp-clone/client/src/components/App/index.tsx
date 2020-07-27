@@ -1,5 +1,6 @@
 import React from 'react';
 import Login from '../Login';
+import Dashboard from '../../pages/Dashboard';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import './styles.css';
 
@@ -9,8 +10,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      {id}
-      <Login onIdSubmit={setId} />
+      {id ? <Dashboard id={id} /> : <Login onIdSubmit={setId} />}
     </div>
   );
 }

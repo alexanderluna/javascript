@@ -22,7 +22,7 @@ const Login: React.FC<Props> = ({ onIdSubmit }) => {
     <Container className="align-items-center d-flex" style={{ height: '100vh' }}>
       <Form className="w-100" onSubmit={handleSubmit}>
         <Form.Group>
-          <Form.Label>Enter you ID</Form.Label>
+          <Form.Label>Enter your ID</Form.Label>
           <Form.Control
             type="text"
             placeholder="Insert ID or create a new one"
