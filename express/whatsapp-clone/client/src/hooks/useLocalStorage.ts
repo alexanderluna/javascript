@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 const PREFIX = 'whatsapp-clone-';
 
-const useLocalStorage = (key: string, initialValue?: string | Function) => {
+const useLocalStorage = (key: string, initialValue?: string | Function | Array<any>) => {
   const prefixKey = PREFIX + key;
   const [value, setValue] = useState(() => {
     const jsonValue = localStorage.getItem(prefixKey);

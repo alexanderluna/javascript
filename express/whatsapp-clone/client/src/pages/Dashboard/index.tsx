@@ -1,5 +1,7 @@
 import React from 'react';
 import Sidebar from '../../components/Sidebar';
+import { ContactsProvider } from '../../contexts/ContactsProvider';
+import { ConversationsProvider } from '../../contexts/ConversationsProvider';
 
 interface Props {
   id: string;
@@ -7,9 +9,11 @@ interface Props {
 
 const Dashboard: React.FC<Props> = ({ id }) => {
   return (
-    <div>
-      <Sidebar id={id} />
-    </div>
+    <ContactsProvider>
+      <ConversationsProvider>
+        <Sidebar id={id} />
+      </ConversationsProvider>
+    </ContactsProvider>
   )
 };
 
