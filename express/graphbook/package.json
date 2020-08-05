@@ -7,17 +7,28 @@
         "client": "webpack serve --devtool inline-source-map --hot --config webpack.client.config.js",
         "client:build": "webpack --config webpack.client.build.config.js",
         "stats": "webpack --profile --json --config webpack.client.build.config.js > stats.json",
-        "analyze": "webpack-bundle-analyzer stats.json"
+        "analyze": "webpack-bundle-analyzer stats.json",
+        "server": "nodemon --exec babel-node --watch src/server src/server/index.js"
     },
     "author": "alexander luna",
     "license": "ISC",
     "dependencies": {
+        "apollo-server-express": "^3.1.2",
+        "compression": "^1.7.4",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "graphql": "^15.5.1",
+        "graphql-tools": "^8.0.0",
+        "helmet": "^4.6.0",
+        "nodemon": "^2.0.12",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
-        "react-helmet": "^6.1.0"
+        "react-helmet": "^6.1.0",
+        "winston": "^3.3.3"
     },
     "devDependencies": {
         "@babel/core": "^7.14.8",
+        "@babel/node": "^7.14.9",
         "@babel/plugin-proposal-decorators": "^7.14.5",
         "@babel/plugin-proposal-function-sent": "^7.14.5",
         "@babel/plugin-proposal-throw-expressions": "^7.14.5",
@@ -30,6 +41,7 @@
         "eslint": "^7.32.0",
         "eslint-config-airbnb": "^18.2.1",
         "eslint-plugin-jsx-a11y": "^6.4.1",
+        "eslint-plugin-react": "^7.24.0",
         "html-webpack-plugin": "^5.3.2",
         "mini-css-extract-plugin": "^2.1.0",
         "style-loader": "^3.2.1",
