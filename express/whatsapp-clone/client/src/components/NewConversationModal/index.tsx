@@ -1,7 +1,7 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
 import { useContacts } from '../../contexts/ContactsProvider';
-import { useConversions } from '../../contexts/ConversationsProvider';
+import { useConversations } from '../../contexts/ConversationsProvider';
 
 interface Props {
   closeModal: Function;
@@ -10,7 +10,7 @@ interface Props {
 const NewConversationModal: React.FC<Props> = ({ closeModal }) => {
   const [selectedContactIds, setSelectedContactIds] = useState<Array<String>>([]);
   const { contacts } = useContacts();
-  const { createConversation } = useConversions();
+  const { createConversation } = useConversations();
 
   const handleCheckboxChange = (contactId: String) => {
     setSelectedContactIds(prevSelectedContactIds => {

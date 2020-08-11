@@ -3,6 +3,8 @@ import Login from '../Login';
 import Dashboard from '../../pages/Dashboard';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import './styles.css';
+import { ContactsProvider } from '../../contexts/ContactsProvider';
+import { ConversationsProvider } from '../../contexts/ConversationsProvider';
 
 const App: React.FC = () => {
 
@@ -10,7 +12,11 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      {id ? <Dashboard id={id} /> : <Login onIdSubmit={setId} />}
+      <ContactsProvider>
+        <ConversationsProvider id={id}>
+          {id ? <Dashboard id={id} /> : <Login onIdSubmit={setId} />}
+        </ConversationsProvider>
+      </ContactsProvider>
     </div>
   );
 }

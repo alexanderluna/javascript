@@ -1,19 +1,20 @@
 import React from 'react';
+import OpenConversation from '../../components/OpenConversation';
 import Sidebar from '../../components/Sidebar';
-import { ContactsProvider } from '../../contexts/ContactsProvider';
-import { ConversationsProvider } from '../../contexts/ConversationsProvider';
+import { useConversations } from '../../contexts/ConversationsProvider';
 
 interface Props {
   id: string;
 }
 
 const Dashboard: React.FC<Props> = ({ id }) => {
+  const { selectedConversation } = useConversations();
+
   return (
-    <ContactsProvider>
-      <ConversationsProvider>
-        <Sidebar id={id} />
-      </ConversationsProvider>
-    </ContactsProvider>
+    <div style={{ height: '100vh' }} className="d-flex">
+      <Sidebar id={id} />
+      {selectedConversation && <OpenConversation />}
+    </div>
   )
 };
 

@@ -22,7 +22,7 @@ const Sidebar: React.FC<Props> = ({ id }) => {
   const closeModal = () => setModalOpen(false);
 
   return (
-    <div style={{ width: '25vw', height: '100vh' }} className="d-flex flex-column">
+    <div style={{ width: '25vw' }} className="d-flex flex-column">
       <Tab.Container activeKey={activeKey} onSelect={setActiveKey}>
         <Nav variant="tabs" className="justify-content-center">
           <Nav.Item>

@@ -1,9 +1,14 @@
 import React, { useContext } from 'react'
 import useLocalStorage from '../hooks/useLocalStorage';
 
+interface IContact {
+  id: string;
+  name: string;
+}
+
 interface ContextProps {
-  contacts: Array<any>,
-  createContact: Function
+  contacts: Array<IContact>;
+  createContact: Function;
 }
 
 const ContactsContext = React.createContext<ContextProps>({} as ContextProps);
