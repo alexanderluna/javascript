@@ -1,0 +1,22 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t alexanderluna/react-ecommerce -f dockerfile.dev .
+
+script:
+  - docker run alexanderluna/react-ecommerce npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-west-2"
+  app: "docker-react-ecommerce"
+  env: "Docker-env"
+  bucket_name: "my-elasticbeanstalk-bucket-name"
+  bucket_path: "docker-react-ecommerce"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
