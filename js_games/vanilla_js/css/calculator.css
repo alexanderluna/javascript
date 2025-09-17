@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    background-color: gainsboro;
+    padding: 1rem;
+    border-radius: 20px;
+}
+
+.display {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.display h2 {
+    padding-right: 5px;
+    font-size: 3rem;
+}
+
+.row {
+    max-width: 50vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    gap: 5px;
+}
+
+#zero {
+    flex: 1 49%;
+}
+
+button {
+    flex: 1 24%;
+    border-radius: 50px;
+    border: none;
+    background-color: rgb(208, 208, 208, 0.8);
+    color: rgb(255, 255, 255);
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+}
