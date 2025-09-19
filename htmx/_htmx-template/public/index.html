@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.7/dist/htmx.min.js"></script>
+    <title>HTMX CRUD</title>
+</head>
+
+<body>
+    <h1>Diary</h1>
+
+    <form hx-post="/diary" hx-disabled-elt="#add-btn" hx-target="table tbody" hx-swap="afterbegin"
+        hx-on::after-request="this.reset()">
+        <div>
+            <label for="day">day</label>
+            <input id="day" name="day" type="text">
+        </div>
+        <div>
+            <label for="entry">Entry</label>
+            <input type="text" id="entry" name="entry" required size="30">
+        </div>
+        <button id="add-btn">Add</button>
+    </form>
+
+    <table hx-trigger="revealed" hx-get="/table-rows" hx-target="tbody">
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Entry</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</body>
+
+</html>
