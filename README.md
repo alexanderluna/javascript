@@ -7,60 +7,67 @@
 > imperative, and declarative styles. -
 > [MDN Web Docs](https://developer.mozilla.org/bm/docs/Web/JavaScript)
 
-## Index
+Javascript is versatile programming language that can be used to build web
+applications, servers, CLI scripts, automate systems, game development and
+mobile app development. This Repository is full of guides and resources which
+I collected reading books, blog posts and watching course.
 
-- [Why Javascript](#why-javascript)
-- [My Goals with Javascript](#my-goals-with-javascript)
-- [Projects](/)
+## Table of Contents
+
+- [Installation and Setup](#installation-and-setup)
+  - [Learning Javascript](./learning_js/)
+- [Algorithms](./algorithms/)
+- [Electron](./electron/)
+- [Server](./express/)
+- [HTMX](./htmx/)
+- [Game Development](./js_games/)
+- [React](./react/)
+  - [MERN Stack App](https://github.com/alexanderluna/javascript_box/tree/master/express/mern_stack)
   - [Earthquake Tracker](https://github.com/alexanderluna/earthquake-tracker)
   - [NASA Image of the Day](https://github.com/alexanderluna/nasa-udacity)
+  - [GraphQL Book App](https://github.com/alexanderluna/javascript_box/tree/master/express/graphql-book-project)
+- [React Native](./react_native/)
+- [Vanilla Javascript](/)
   - [Kana Trainer](https://github.com/alexanderluna/kana-trainer)
   - [Progressive Web App Store](https://github.com/alexanderluna/pwa-app-store)
-  - [MERN Stack App](https://github.com/alexanderluna/javascript_box/tree/master/express/mern_stack)
-  - [GraphQL Book App](https://github.com/alexanderluna/javascript_box/tree/master/express/graphql-book-project)
+- [Web scraping](./puppeteer/)
 - [CodePen Projects](https://codepen.io/mr-moon)
-- [Resouces to learn](#resources-to-learn)
+- [Resources](#resources)
 
-## Why Javascript
+## Installation and Setup
 
-Javascript is the most widely used programming language. It can be used to
-enhance web pages in a browser environment, building servers, writing scripts
-to automate system tasks as well game development and iOS/Android developement.
-It has gone through a huge grow over the past years.
+When it comes to Javascript development, you will need a Javascript Runtime
+(Node or Bun). You can install either one with Mise.
 
-## My goals with Javascript
+``` sh
+# on Linux
+curl https://mise.run | sh
 
-Javascript was one of the first languages I learned mainly as a way to add a
-dynamic feel to websites. Javascript has grown exponantially since then and I
-have also learned a lot more about this powerful language since then from node
-to express, graphql and react. There so many more things I want to learn about
-this language:
+# on MacOS
+brew install mise
 
-- React, Vue, Angular
-- Graphql
-- Express, Koa
-- React Native
-- Electron
-- D3, phaser
-- Jest testing
+# Install node or bun and add them to your $PATH automatically
+mise use node@latest
+mise use -g bun@latest
+```
 
-## Resources I used to learn
+## Resources
 
-### Books
-
-- [Book] [Javascript: The Definitive Guide](https://www.amazon.com/JavaScript-Definitive-Guide-Activate-Guides/dp/0596805527/ref=sr_1_1?ie=UTF8&qid=1541282827&sr=8-1&keywords=Javascript%3A+The+Definitive+Guide&dpID=51WD-F3GobL&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
-- [Book] [Express in Action](https://www.amazon.com/Express-Action-Writing-building-applications/dp/1617292427/ref=sr_1_1?ie=UTF8&qid=1541282856&sr=8-1&keywords=Express+in+Action&dpID=51SavsoSFIL&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
-- [Book] [JavaScript The Good Parts](https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742/ref=sr_1_1?ie=UTF8&qid=1541282874&sr=8-1&keywords=JavaScript+The+Good+Parts&dpID=5131OWtQRaL&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
-- [Book] [Programming JavaScript Applications](https://www.amazon.com/Programming-JavaScript-Applications-Architecture-Libraries/dp/1491950293/ref=sr_1_1?ie=UTF8&qid=1541282892&sr=8-1&keywords=Programming+JavaScript+Applications)
-- [Book] [React Design Patterns and Best Practices](https://www.amazon.com/React-Design-Patterns-Best-Practices/dp/1786464535/ref=sr_1_1_sspa?ie=UTF8&qid=1541282916&sr=8-1-spons&keywords=React+Design+Patterns+and+Best+Practices&psc=1)
-
-### Videos
-
-- [Video] [[Youtube] GraphQL from Novice to Ninja](https://www.youtube.com/watch?v=Y0lDGjwRYKw&list=PL4cUxeGkcC9iK6Qhn-QLcXCXPQUov1U7f)
-- [Video] [[Pluralsight] Building Data Driven React Application with GraphQL](https://www.pluralsight.com/courses/react-apps-with-relay-graphql-flux)
-- [Video] [[Udemy] MERN Stack Front To Back: Full Stack React, Redux & Node.js](https://www.udemy.com/mern-stack-front-to-back/)
-- [Video] [[Lynda] Advanced Express - Web Application Development](https://www.lynda.com/Express-js-tutorials/Mastering-Express-Web-Application-Development/521234-2.html)
-- [Video] [[Pluralsight] Advanced Node.js](https://www.pluralsight.com/courses/nodejs-advanced)
-- [Video] [[Udemy] React & Redux](https://www.udemy.com/react-redux/)
-- [Video] [[Udemy] Electron for Desktop apps](https://www.udemy.com/electron-react-tutorial/)
-- [Video] [[Udacity] React Nanodegree](https://www.udacity.com/course/react-nanodegree--nd019)
+- ★★★★☆ [React Quickly](https://search.worldcat.org/title/1413449219)
+- ★★★★☆ [React Design Patterns and Best Practices](https://search.worldcat.org/title/1258256116)
+- ★★★★☆ [Javascript Brain Teasers](https://search.worldcat.org/title/1439660267)
+- ★★★☆☆ [The Road to React](https://search.worldcat.org/title/1288165513)
+- ★★★☆☆ [Javascript: The Definitive Guide](https://search.worldcat.org/title/1157318720)
+- ★★★☆☆ [Express in Action](https://search.worldcat.org/title/949043657)
+- [JavaScript The Good Parts](https://search.worldcat.org/title/192027457)
+- [Programming JavaScript Applications](https://search.worldcat.org/title/884966492)
+---
+- ★★★★☆ [React & Redux](https://www.udemy.com/react-redux/)
+- ★★★★☆ [Modern React with Redux [2019 Update]](https://www.udemy.com/react-redux/)
+- ★★★★☆ [Electron for Desktop apps](https://www.udemy.com/electron-react-tutorial/)
+- [GraphQL from Novice to Ninja](https://www.youtube.com/watch?v=Y0lDGjwRYKw&list=PL4cUxeGkcC9iK6Qhn-QLcXCXPQUov1U7f)
+- [Building Data Driven React Application with GraphQL](https://www.pluralsight.com/courses/react-apps-with-relay-graphql-flux)
+- [MERN Stack Front To Back: Full Stack React, Redux & Node.js](https://www.udemy.com/mern-stack-front-to-back/)
+- [Advanced Express - Web Application Development](https://www.lynda.com/Express-js-tutorials/Mastering-Express-Web-Application-Development/521234-2.html)
+- [Advanced Node.js](https://www.pluralsight.com/courses/nodejs-advanced)
+- [React Nanodegree](https://www.udacity.com/course/react-nanodegree--nd019)
